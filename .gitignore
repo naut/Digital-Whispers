@@ -1,0 +1,8 @@
+.DS_Store
+log/*.log
+log/*.pid
+tmp/**/*
+coverage/**/*
+coverage/*
+config/database.yml
+config/thin.yml
