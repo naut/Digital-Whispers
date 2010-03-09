@@ -1,45 +1,37 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:users)
-  end
-
-  test "should get new" do
+  def test_new
     get :new
-    assert_response :success
+    assert_template 'new'
   end
-
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, :user => { }
-    end
-
-    assert_redirected_to user_path(assigns(:user))
+  
+  def test_create_invalid
+    User.any_instance.stubs(:valid?).returns(false)
+    post :create
+    assert_template 'new'
   end
-
-  test "should show user" do
-    get :show, :id => users(:one).to_param
-    assert_response :success
+  
+  def test_create_valid
+    User.any_instance.stubs(:valid?).returns(true)
+    post :create
+    assert_redirected_to root_url
   end
-
-  test "should get edit" do
-    get :edit, :id => users(:one).to_param
-    assert_response :success
+  
+  def test_edit
+    get :edit, :id => User.first
+    assert_template 'edit'
   end
-
-  test "should update user" do
-    put :update, :id => users(:one).to_param, :user => { }
-    assert_redirected_to user_path(assigns(:user))
+  
+  def test_update_invalid
+    User.any_instance.stubs(:valid?).returns(false)
+    put :update, :id => User.first
+    assert_template 'edit'
   end
-
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, :id => users(:one).to_param
-    end
-
-    assert_redirected_to users_path
+  
+  def test_update_valid
+    User.any_instance.stubs(:valid?).returns(true)
+    put :update, :id => User.first
+    assert_redirected_to root_url
   end
 end

@@ -1,0 +1,132 @@
+/* Normalising
+----------------------------------*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+ol, ul { list-style: none; }
+
+table { border-spacing: 0; }
+
+fieldset, img { border: 0; }
+
+caption, th { text-align: left; }
+
+/* Basic Stuff 
+----------------------------------*/
+
+abbr, acronym, .help { font-style: italic; cursor: help; }
+
+a { outline: none; color: black; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix { zoom: 1; }
+
+.clearer { clear: both; }
+
+
+/* site
+----------------------------------*/
+
+body {
+	font: 85%/1.3em "Lucida Grande", Arial, sans-serif;
+}
+
+#container {
+	width: 800px;
+	margin: 30px auto 0 auto;
+}
+
+.header {
+	padding: 0 0 20px 0;
+	margin: 0 0 50px 0;
+	border-bottom: 1px solid black;
+}
+
+h1 {
+	font-size: 200%;
+	float: left;
+}
+
+h1 a {
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 150%;
+	margin-bottom: 10px;
+}
+
+.nav_main {
+	float: right;
+}
+	.nav_main li {
+		float: right;
+		margin: 0 0 0 20px;
+	}
+
+
+
+
+
+
+
+
+/* flash and error styling
+----------------------------------*/
+
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 0 0 30px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
