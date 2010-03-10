@@ -42,7 +42,3 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-class ActionMailer::Base
-  default_url_options[:host] = 'digital-whispers.net'
-end
-
