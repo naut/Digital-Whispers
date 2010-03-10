@@ -11,4 +11,3 @@ class UserMailer < ActionMailer::Base
   end  
 
 end
-</noreply@digital-whispers.net>
