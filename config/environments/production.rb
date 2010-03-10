@@ -26,7 +26,3 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
-
-class ActionMailer::Base
-  default_url_options[:host] = 'digital-whispers.net'
-end
