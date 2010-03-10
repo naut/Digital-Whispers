@@ -1,4 +1,8 @@
 class UserSessionsController < ApplicationController
+  
+  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user,    :only => :destroy
+  
   def new
     @user_session = UserSession.new
   end
@@ -19,4 +23,5 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Successfully logged out."
     redirect_to root_url
   end
+  
 end

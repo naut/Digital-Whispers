@@ -7,7 +7,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
 
-  map.resources :users
+  map.confirmation 'confirmation/:confirmation_code',
+                     :controller   => 'users',
+                     :action       => 'confirm',
+                     :conditions   => {:method => :get}
 
   # The priority is based upon order of creation: first created -> highest priority.
 
