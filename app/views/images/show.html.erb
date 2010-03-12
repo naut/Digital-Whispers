@@ -1,0 +1,30 @@
+<% title "Image" %>
+
+<p>
+  <strong>Owner:</strong>
+  <%=h @image.owner_id %>
+</p>
+
+<p>
+	ORIGINAL<br/>
+	<%= image_tag @image.image.url %>
+</p>
+
+<p>
+	RED<br/>
+	<%= image_tag @image.image.url(:red) %>
+</p>
+<p>
+	BLUE<br/>
+	<%= image_tag @image.image.url(:blue) %>
+</p>
+<p>
+	GREEN<br/>
+	<%= image_tag @image.image.url(:green) %>
+</p>
+
+
+<p>
+  <%= link_to "Edit", edit_image_path(@image) %> |
+  <%= link_to "View All", images_path %>
+</p>

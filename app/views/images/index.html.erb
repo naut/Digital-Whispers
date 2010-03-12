@@ -1,0 +1,16 @@
+<% title "Images" %>
+
+<table>
+  <tr>
+    <th>Owner</th>
+  </tr>
+  <% for image in @images %>
+    <tr>
+      <td><%=h image.owner_id %></td>
+      <td><%= link_to "Show", image %></td>
+      <td><%= link_to "Edit", edit_image_path(image) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Image", new_image_path %></p>
