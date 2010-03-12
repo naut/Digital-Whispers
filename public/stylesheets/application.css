@@ -45,6 +45,10 @@ body {
 	border-bottom: 1px solid black;
 }
 
+p {
+	margin-bottom: 20px;
+}
+
 h1 {
 	font-size: 200%;
 	float: left;

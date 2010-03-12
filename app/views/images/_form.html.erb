@@ -1,11 +1,7 @@
 <% form_for @image, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :owner_id %><br />
-    <%= f.text_field :owner_id %>
-  </p>
 	<p>
-		<%= f.file_field :image %>
+	<%= f.file_field :image %>
 	</p>
   <p><%= f.submit "Submit" %></p>
 <% end %>

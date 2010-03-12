@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   
-  before_filter :require_no_user
   
   def new
     @user = User.new
@@ -28,6 +27,7 @@ class UsersController < ApplicationController
     end
     redirect_back_or_default root_url
   end  
+  
   
   def edit
     @user = current_user

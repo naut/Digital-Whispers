@@ -11,8 +11,22 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
   
+  def recent
+    respond_to do |format|
+        format.rss {
+          @images = Image.find(:all)
+          render 'recent', :layout => "simple" 
+        }
+    end
+  end
+  
   def create
     @image = Image.new(params[:image])
+    if logged_in?
+      @image.owner_id = current_user
+    else
+      @image.owner_id = 0
+    end
     if @image.save
       flash[:notice] = "Successfully created image."
       redirect_to @image

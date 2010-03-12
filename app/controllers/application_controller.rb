@@ -46,7 +46,7 @@ protected
     if logged_in?
       store_location
       flash[:notice] = 'Please logout to access this page!'
-      redirect_to account_url
+      redirect_to user_url
       return false
     end
   end
