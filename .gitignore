@@ -6,3 +6,4 @@ coverage/**/*
 coverage/*
 config/database.yml
 config/thin.yml
+public/system
