@@ -19,4 +19,8 @@
   has_many  :images,
             :class_name => "Image"
   
+  has_many  :entries,
+            :class_name => "Entry"
+  
+  
 end

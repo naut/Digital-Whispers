@@ -1,0 +1,13 @@
+<% title "Entries" %>
+
+<table>
+  <tr>
+    <th>Id</th>
+  </tr>
+  <% for entry in @entries %>
+    <tr>
+      <td><%=h entry.id %></td>
+    </tr>
+  <% end %>
+</table>
+

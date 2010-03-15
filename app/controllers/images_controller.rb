@@ -22,7 +22,9 @@ class ImagesController < ApplicationController
   end
   
   def create
-    @image = Image.new(params[:original_image])
+    
+    @entry = Entry.new
+    @image = @entry.images.new(params[:image])
     if @image.save
       flash[:notice] = "Successfully created image."
       redirect_to @image

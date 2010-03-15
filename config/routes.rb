@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :original_images
+  map.resources :entries
+
 
   
   map.resources :images,
