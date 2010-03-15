@@ -109,7 +109,7 @@ module Paperclip
     # security, however, for performance reasons.  set
     # include_updated_timestamp to false if you want to stop the attachment
     # update time appended to the url
-    def url style_name = default_style, include_updated_timestamp = true
+    def url style_name = default_style, include_updated_timestamp = false
       url = original_filename.nil? ? interpolate(@default_url, style_name) : interpolate(@url, style_name)
       include_updated_timestamp && updated_at ? [url, updated_at].compact.join(url.include?("?") ? "&" : "?") : url
     end
