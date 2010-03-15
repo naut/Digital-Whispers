@@ -22,12 +22,7 @@ class ImagesController < ApplicationController
   end
   
   def create
-    @image = Image.new(params[:image])
-    if logged_in?
-      @image.owner_id = current_user.id
-    else
-      @image.owner_id = 0
-    end
+    @image = Image.new(params[:original_image])
     if @image.save
       flash[:notice] = "Successfully created image."
       redirect_to @image

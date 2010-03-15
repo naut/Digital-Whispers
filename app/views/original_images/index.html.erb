@@ -1,0 +1,15 @@
+<% title "Original Images" %>
+
+<table>
+  <tr>
+    <th>Owner</th>
+  </tr>
+  <% for original_image in @original_images %>
+    <tr>
+      <td><%=h original_image.owner_id %></td>
+      <td><%= link_to "Edit", edit_original_image_path(original_image) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Original Image", new_original_image_path %></p>

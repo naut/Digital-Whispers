@@ -1,9 +1,9 @@
 <h2>Last 3 submissions</h2>
 <ul class="last_submissions">
-<% @images.reverse[0...3].each do |s|%>
+<%#@images.reverse[0...3].each do |s|%>
 	<li>
-		<%= link_to image_tag(s.image.url(:small)), s %>
-		<%= s.poster.username %>
+		<%# link_to image_tag(s.image.url(:small)), s %>
+		<%# s.poster.username %>
 	</li>
-<% end %>	
+<%# end %>	
 </ul>
