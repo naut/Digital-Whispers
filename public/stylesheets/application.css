@@ -70,6 +70,13 @@ h2 {
 		float: right;
 		margin: 0 0 0 20px;
 	}
+	
+	
+.last_submissions li {
+	width: 120px;
+	float: left;
+	margin-right: 20px;
+}
 
 
 

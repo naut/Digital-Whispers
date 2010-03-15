@@ -16,4 +16,7 @@
     transitions :to => :confirmed, :from => :pending
   end
 
+  has_many  :images,
+            :class_name => "Image"
+  
 end

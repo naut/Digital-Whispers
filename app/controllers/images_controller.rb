@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
   end
   
   def new
+    @images = Image.all
     @image = Image.new
   end
   
@@ -23,7 +24,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(params[:image])
     if logged_in?
-      @image.owner_id = current_user
+      @image.owner_id = current_user.id
     else
       @image.owner_id = 0
     end

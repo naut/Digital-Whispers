@@ -1,9 +1,14 @@
 class Image < ActiveRecord::Base
   
+  belongs_to  :poster,
+              :class_name => "User",
+              :foreign_key => "owner_id"
+  
   has_attached_file :image,
   :styles => {  :red => ["", :jpg],
                 :blue => ["", :jpg],
-                :green => ["", :jpg]
+                :green => ["", :jpg],
+                :small => ["120x120>", :jpg]
   },
 
   :convert_options => { :red => '-channel Red -separate',
