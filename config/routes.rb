@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
                   :recent => :get
                 },
                 :member => {
-                  :edit => :any
+                  :postupdate => :any
                 }
   
   map.login "login", :controller => "user_sessions", :action => "new"

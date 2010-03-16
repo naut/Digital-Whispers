@@ -42,6 +42,10 @@ class ImagesController < ApplicationController
     end
   end
   
+  def postupdate
+    
+  end
+  
   def edit
     @image = Image.find(params[:id])
   end
