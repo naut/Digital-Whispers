@@ -43,7 +43,7 @@ class ImagesController < ApplicationController
   end
   
   def postupdate
-    
+    render :nothing => true
   end
   
   def edit
