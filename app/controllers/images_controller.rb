@@ -44,7 +44,7 @@ class ImagesController < ApplicationController
   
   def postupdate
     render :nothing => true
-    logger.info{param}
+    logger.info{params}
     
   end
   
