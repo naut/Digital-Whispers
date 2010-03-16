@@ -22,9 +22,18 @@ class ImagesController < ApplicationController
   end
   
   def create
-    
     @entry = Entry.new
     @image = @entry.images.new(params[:image])
+    
+    if logged_in?
+      @entry.owner_id = current_user
+    else
+      @entry.owner_id = 0
+    end
+    
+    @entry.save
+    @image.entry_id = @entry.id
+    
     if @image.save
       flash[:notice] = "Successfully created image."
       redirect_to @image
@@ -39,7 +48,10 @@ class ImagesController < ApplicationController
   
   def update
     @image = Image.find(params[:id])
-    if @image.update_attributes(params[:image])
+    @entry = Entry.find(@image.entry_id)
+    @image = @entry.images.new(params[:image])
+    
+    if @image.save
       flash[:notice] = "Successfully updated image."
       redirect_to @image
     else

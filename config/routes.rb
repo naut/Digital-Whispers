@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :entries
-
-
   
+  map.resources :entries,
+                :collection => {
+                  :recent => :get
+                }
+
   map.resources :images,
                 :collection => {
                   :recent => :get

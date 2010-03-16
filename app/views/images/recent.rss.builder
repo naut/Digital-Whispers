@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
 
     for image in @images.reverse
       xml.item do
-        xml.title image.owner_id
+        xml.title image.entry.id
         xml.description "http://digital-whispers.net"+image.image.url+" http://digital-whispers.net"+image.image.url(:red)+" http://digital-whispers.net"+image.image.url(:blue)+" http://digital-whispers.net"+image.image.url(:green)
         xml.original "http://digital-whispers.net"+image.image.url
         xml.red "http://digital-whispers.net"+image.image.url(:red)
