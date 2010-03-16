@@ -8,6 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :images,
                 :collection => {
                   :recent => :get
+                },
+                :member => {
+                  :edit => :any
                 }
   
   map.login "login", :controller => "user_sessions", :action => "new"
