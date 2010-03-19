@@ -49,14 +49,13 @@ class ImagesController < ApplicationController
   
   def postupdate
     
-    
-     
-     
 
      @image = Image.find(params[:id])
      @entry = Entry.find(@image.entry_id)
 
      require 'RMagick'
+     require 'stringio'
+     require 'tempfile'
 
      img = Magick::Image.read_inline("/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAUAAA/+4ADkFkb2JlAGTAAAAAAf/b
      AIQAAgICAgICAgICAgMCAgIDBAMCAgMEBQQEBAQEBQYFBQUFBQUGBgcHCAcHBgkJCgoJCQwMDAwM
@@ -1691,12 +1690,15 @@ class ImagesController < ApplicationController
      fIfLxTg62slbcSSLGhLNGm4dzyNRsaA1Phtt4DVTvQ5U8D6bcqDzVuPjhPdwFszmsEbu0kZNSrVF
      fH+WsfX2hKa3+2nptFt6n89kXvbhbe3RRbKAoUeZ+us66KrTiWG5TVpPYxW0cEzn3gpPDwP+zR4j
      pDHNDJcqGWWK7upCVZAh5IxBoKaWNsEGiP1sWBW/kMjacLeAyKol2Z/IjRYwEghyJiF//9k=").first
-
+     
      #img.write("#{RAILS_ROOT}/public/test.jpg")
+     
+     f = Tempfile.new('newimage')
+     f.write(img.to_blob)
+     
+     @image = @entry.images.new(:image => f)
 
      
-     @image = @entry.images.new(img)
-
      if @image.save
        flash[:notice] = "Successfully updated image."
        redirect_to @image
