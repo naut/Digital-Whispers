@@ -26,7 +26,7 @@ class ImagesController < ApplicationController
     @image = @entry.images.new(params[:image])
     
     if logged_in?
-      @entry.owner_id = current_user
+      @entry.owner_id = current_user.id
     else
       @entry.owner_id = 0
     end
