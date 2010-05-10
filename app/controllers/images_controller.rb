@@ -58,23 +58,23 @@ class ImagesController < ApplicationController
      require 'tempfile'
 
      logger.info {params[:image]}
-     img = Magick::Image.read_inline(params[:image]).first
+     #img = Magick::Image.read_inline(params[:image]).first
      
      
      #img.write("#{RAILS_ROOT}/public/test.jpg")
      
-     f = Tempfile.new('newimage')
-     f.write(img.to_blob)
+     #f = Tempfile.new('newimage')
+     #f.write(img.to_blob)
      
-     @image = @entry.images.new(:image => f)
+     #@image = @entry.images.new(:image => f)
 
      
-     if @image.save
-       flash[:notice] = "Successfully updated image."
-       redirect_to @image
-     else
+     #if @image.save
+#flash[:notice] = "Successfully updated image."
+      # redirect_to @image
+     #else
        render :action => 'edit'
-     end
+     ##end
 
      
     
