@@ -58,14 +58,14 @@ class ImagesController < ApplicationController
      require 'tempfile'
 
      logger.info {params[:image]}
-     img = Magick::Image.read(StringIO.new(params[:image], 'r'))
+     img = Magick::Image.from_blob(params[:image])
      
      
      
      #img.write("#{RAILS_ROOT}/public/test.jpg")
      
      f = Tempfile.new('newimage')
-     f.write(img.to_blob)
+     f.write(img)
      
      @image = @entry.images.new(:image => f)
 
