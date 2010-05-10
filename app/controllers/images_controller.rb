@@ -58,7 +58,7 @@ class ImagesController < ApplicationController
      require 'tempfile'
 
      logger.info {params[:image]}
-     img = Magick::Image.from_blob(params[:image])
+     img = Magick::Image.read(StringIO.new(params[:image], 'r'))
      
      
      
