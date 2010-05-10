@@ -57,8 +57,9 @@ class ImagesController < ApplicationController
      require 'stringio'
      require 'tempfile'
 
+     logger.info {params[:image]}
      img = Magick::Image.read_inline(params[:image]).first
-     logger.info(params[:image])
+     
      
      #img.write("#{RAILS_ROOT}/public/test.jpg")
      
