@@ -57,7 +57,7 @@ class ImagesController < ApplicationController
      require 'stringio'
      require 'tempfile'
 
-     logger.info {params[:image]}
+     logger.info {params[:image].length}
      img = Magick::Image.from_blob(params[:image])[0]
      img.format = "JPG"
      
