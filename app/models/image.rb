@@ -22,4 +22,7 @@ class Image < ActiveRecord::Base
         :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
         :message => "Please upload an image file (jpeg, gif or png)."
 
+
+  
+
 end

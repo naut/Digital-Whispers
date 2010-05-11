@@ -57,9 +57,8 @@ class ImagesController < ApplicationController
      require 'stringio'
      require 'tempfile'
 
-     img = (params[:image])
-
      
+     img = params[:image]
      f = Tempfile.new('newimage')
      f.write(img)
      
