@@ -47,34 +47,6 @@ class ImagesController < ApplicationController
     end
   end
   
-  def postupdate
-    
-
-     @image = Image.find(params[:id])
-     @entry = Entry.find(@image.entry_id)
-
-     require 'RMagick'
-     require 'stringio'
-     require 'tempfile'
-
-     
-     img = params[:image]
-     f = Tempfile.new('newimage')
-     f.write(img)
-     
-     @image = @entry.images.new(:image => f)
-
-     
-     if @image.save
-       flash[:notice] = "Successfully updated image."
-       redirect_to @image
-     else
-       render :action => 'edit'
-     end
-
-     
-    
-  end
   
   def edit
     @image = Image.find(params[:id])
