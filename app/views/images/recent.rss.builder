@@ -10,7 +10,7 @@ xml.rss :version => "2.0" do
     for image in @images.reverse
       xml.item do
         xml.title image.entry.id
-        xml.description image.entry.id.to_s+" http://digital-whispers.net"+image.image.url+" http://digital-whispers.net"+image.image.url(:red)+" http://digital-whispers.net"+image.image.url(:blue)+" http://digital-whispers.net"+image.image.url(:green)
+        xml.description image.id.to_s+" http://digital-whispers.net"+image.image.url+" http://digital-whispers.net"+image.image.url(:red)+" http://digital-whispers.net"+image.image.url(:blue)+" http://digital-whispers.net"+image.image.url(:green)
         xml.original "http://digital-whispers.net"+image.image.url
         xml.red "http://digital-whispers.net"+image.image.url(:red)
         xml.blue "http://digital-whispers.net"+image.image.url(:blue)
