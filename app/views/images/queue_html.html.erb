@@ -1,0 +1,15 @@
+<h2>HTML Queue</h2>
+<ul>
+<%@image_queue.reverse.each do |e|%>
+	<li>
+		
+		<%= link_to image_tag(e.images.last.image.url(:small)), e.images.last %>
+		
+		<!-- <% e.images.reverse.each do |i| %>
+				<%= link_to image_tag(i.image.url(:small)), i %>
+			<% end %> -->
+	</li>
+<% end %>
+</ul>
+
+
