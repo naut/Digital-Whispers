@@ -17,13 +17,68 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
   
-  def recent
+  def timeline
     respond_to do |format|
         format.rss {
           @images = Image.find(:all)
-          render 'recent', :layout => "simple" 
+          render 'timeline', :layout => "simple" 
         }
     end
+  end
+  
+  
+  def queue
+    respond_to do |format|
+        format.rss {
+          @entry = Entry.find(:last)
+
+          @last_image = Image.find(:last)
+          @image_queue = Array.new
+
+          @entries = Entry.find(:all, :order => "created_at DESC").each do |e|
+            if e.owner_id == 0
+              if e.images.size == 1
+                @image_queue << e
+              end
+            else
+              if e.images.size <= 3
+                @image_queue << e
+              end
+            end
+          end
+          
+          if @image_queue.size == 0
+            @image_queue << @last_image.entry
+          end
+          
+        }
+    end
+
+  end
+  
+  def queue_html
+        
+    @entry = Entry.find(:last)
+
+    @last_image = Image.find(:last)
+    @image_queue = Array.new
+
+    @entries = Entry.find(:all, :order => "created_at DESC").each do |e|
+      if e.owner_id == 0
+        if e.images.size == 1
+          @image_queue << e
+        end
+      else
+        if e.images.size <= 3
+          @image_queue << e
+        end
+      end
+    end
+    
+    if @image_queue.size == 0
+      @image_queue << @last_image.entry
+    end
+    
   end
   
   def create

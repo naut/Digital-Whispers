@@ -7,7 +7,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :images,
                 :collection => {
-                  :recent => :get
+                  :timeline => :get,
+                  :queue => :get,
+                  :queue_html => :get
                 },
                 :member => {
                   :postupdate => :any,
