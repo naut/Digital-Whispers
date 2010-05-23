@@ -1,26 +1,21 @@
 <% title "Image" %>
 
 
-<p>
-	ORIGINAL<br/>
-	<%= image_tag @image.image.url %>
-</p>
-
-<p>
-	RED<br/>
-	<%= image_tag @image.image.url(:red) %>
-</p>
-<p>
-	BLUE<br/>
-	<%= image_tag @image.image.url(:blue) %>
-</p>
-<p>
-	GREEN<br/>
-	<%= image_tag @image.image.url(:green) %>
-</p>
+<%= render :partial => 'content_top' %>
 
 
-<p>
-  <%= link_to "Edit", edit_image_path(@image) %> |
-  <%= link_to "View All", images_path %>
-</p>
+
+<div class="content_bottom">
+	
+	<h2>Submission #<%= @image.id %></h2>
+
+	<p>
+		ORIGINAL<br/>
+		<%= image_tag @image.image.url %>
+	</p>
+
+
+	
+	
+	
+</div>
