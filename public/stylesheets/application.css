@@ -26,64 +26,239 @@ a { outline: none; color: black; }
 
 .clearer { clear: both; }
 
+p { margin: 0 0 20px 0; }
+
+.left { float: left; }
+
+.right { float: right; } 
+
+
 
 /* site
 ----------------------------------*/
 
-body {
-	font: 85%/1.3em "Lucida Grande", Arial, sans-serif;
+html {
+	height: 100%;
 }
 
-#container {
-	width: 800px;
-	margin: 30px auto 0 auto;
+body {
+	font: 85%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	background: url(/images/body_bg.jpg) center top repeat-x #1e211f;
+	height: 100%;
 }
+
+#wrapper {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	min-height: 100%;
+	background: url(/images/logo_bg.png) no-repeat right 330px white;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+	width: 880px;
+	padding: 0 40px;
+	margin-left: -480px;
+	left: 50%;
+	background: white;
+	border-top: 1px solid #dcdcdc;
+	line-height: 30px;
+	font-size: 90%;
+}
+
 
 .header {
-	padding: 0 0 20px 0;
-	margin: 0 0 50px 0;
-	border-bottom: 1px solid black;
+	background: #202020;
+	height: 30px;
+	padding: 0 40px;
+	position: relative;
+	z-index: 100;
 }
 
-p {
-	margin-bottom: 20px;
-}
+	.header .dw_logo {
+		height: 13px;
+		width: 191px;
+		background: url(/images/dw_logo_smaller.png);
+		text-indent: -10000px;
+		float: left;
+		margin: 8px 0;
+		display: none;
+	}
+		.header .dw_logo a {
+			display: block;
+		}
 
-h1 {
-	font-size: 200%;
-	float: left;
-}
-
-h1 a {
-	text-decoration: none;
-}
-
-h2 {
-	font-size: 150%;
-	margin-bottom: 10px;
-}
-
-.nav_main {
-	float: right;
-}
-	.nav_main li {
+	.nav_main {
 		float: right;
-		margin: 0 0 0 20px;
+		font-family: 'DINOTCondRegular';
+		font-size: 140%;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: white;
+	}
+		.nav_main li {
+			float: right;
+			margin: 0 0 0 20px;
+		}
+		.nav_main li em {
+			color: #4ca13b;
+			font-style: normal;
+		}
+		.nav_main li a {
+			color: #7c7c7c;
+			text-decoration: none;
+		}
+		.nav_main li a:hover {
+			color: white;
+		}
+
+.content_top {
+	min-height: 100px;
+	background: url(/images/body_bg.jpg) repeat-x center top #1e211f;
+	padding: 0 40px;
+	position: relative;
+	padding: 40px 40px 20px 40px;
+}
+
+	.content_top .dw_logo {
+		height: 23px;
+		width: 343px;
+		background: url(/images/dw_logo.png);
+		text-indent: -10000px;
+		position: relative;
+	}
+		.content_top .dw_logo a {
+			display: block;
+		}
+	.content_top p {
+		color: white;
+		font-size: 110%;
+		line-height: 1.5em;
 	}
 	
 	
-.last_submissions li {
-	width: 120px;
-	margin-right: 20px;
-	float: left;
+.installation {
+	position: absolute;
+
+	right: -75px;
+	top: -20px;
 }
 
+.hover_nav li {
+	float: left;
+	position: relative;
+	margin-right: 10px;
+}
+
+	.hover_nav li a {
+		display: block;
+		border: 1px solid #323234;
+		width: 150px;
+		padding: 10px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+		border-radius: 5px;
+		text-decoration: none;
+	}
+	
+	.hover_nav li a span {
+		display: none;
+		color: white;
+		margin: 10px 0 0 0;
+	}
+	
+	.hover_nav li a strong {
+		display: block;
+		text-align: right;
+		text-transform: uppercase;
+		color: white;
+		font-weight: normal;
+		font-family: 'DINOTCondRegular';
+		font-size: 150%;
+	}
+	
+	.hover_nav li a:hover {
+		border: 1px solid #737373;
+	}
+	
+	.hover_nav li a:hover span {
+		display: block;
+	}
+	
+	.hover_nav li a:hover strong {
+		color: #4ca13b;
+	}
+	
+	.hover_nav a.whisper {
+		background: url(/images/icon_whisper.png) 10px 12px no-repeat #171717;
+	}
+	.hover_nav a.witness {
+		background: url(/images/icon_witness.png) 10px 12px no-repeat #171717;
+	}
 
 
 
+.content_bottom {
+	padding: 30px 40px 60px 40px;
+	
+}
+
+.teaser_list li {
+	float: left;
+	width: 270px;
+	margin-left: 30px;
+}
+	.teaser_list li:first-child {
+		margin-left: 0;
+	}
+	.teaser_list li img {
+		margin: 0 0 20px 0;
+	}
+	
+	
+h2 {
+	font-family: 'DINOTCondRegular';
+	color: #4ca13b;
+	font-size: 200%;
+	text-transform: uppercase;
+	margin: 0 0 20px 0;
+	font-weight: normal;
+}
+
+.grey_button {
+	background: #171717;
+	font-family: 'DINOTCondRegular';
+	font-size: 140%;
+	display: block;
+	float: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	padding: 7px 10px;
+}
+.grey_button span {
+	color: #999999
+}
+
+.grey_button:hover {
+	color: #4ca13b;
+}	
 
 
-
+.last_submissions li {
+	float: left;
+	width: 120px;
+	margin: 0 30px 30px 0;
+	height: 120px;
+}
 
 /* flash and error styling
 ----------------------------------*/
@@ -91,17 +266,20 @@ h2 {
 
 #flash_notice, #flash_error {
   padding: 5px 8px;
-  margin: 0 0 30px 0;
+  margin: 0 0 0 0;
+	padding: 10px 40px ;
 }
 
 #flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
+  background-color: white;
+	color: #4ca13b;
 }
 
+
+
 #flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66;
+  background-color: white;
+	color: #FF0000;
 }
 
 .fieldWithErrors {
@@ -141,3 +319,34 @@ h2 {
   font-size: 12px;
   list-style: disc;
 }
+
+
+/* fonts
+----------------------------------*/
+
+
+@font-face {
+	font-family: 'DINOT-RegularRegular';
+	src: url('/fonts/dinot-regular-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-regular-webfont.woff') format('woff'), url('/fonts/dinot-regular-webfont.ttf') format('truetype'), url('/fonts/dinot-regular-webfont.svg#webfontAMNHgJJL') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINOTCondRegular';
+	src: url('/fonts/dinot-condregular-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-condregular-webfont.woff') format('woff'), url('/fonts/dinot-condregular-webfont.ttf') format('truetype'), url('/fonts/dinot-condregular-webfont.svg#webfontLgcfproI') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINOT-BoldRegular';
+	src: url('/fonts/dinot-bold-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-bold-webfont.woff') format('woff'), url('/fonts/dinot-bold-webfont.ttf') format('truetype'), url('/fonts/dinot-bold-webfont.svg#webfont1NJYe7Vm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+

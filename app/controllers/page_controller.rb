@@ -1,6 +1,8 @@
 class PageController < ApplicationController
   
-  def home
+  def timeline
+    @images = Image.all
+    @image = Image.new
   end
   
 end
