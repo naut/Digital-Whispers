@@ -287,7 +287,6 @@ h2 {
 }
 
 #errorExplanation {
-  width: 400px;
   border: 2px solid #CF0000;
   padding: 0px;
   padding-bottom: 12px;
@@ -297,10 +296,9 @@ h2 {
 
 #errorExplanation h2 {
   text-align: left;
-  font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
   margin: 0;
+font-size: 150%;
   background-color: #c00;
   color: #fff;
 }
