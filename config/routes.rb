@@ -13,7 +13,8 @@ ActionController::Routing::Routes.draw do |map|
                 },
                 :member => {
                   :postupdate => :any,
-                  :update => :any
+                  :update => :any,
+                  :showdetails => :post
                 }
   
   map.login "login", :controller => "user_sessions", :action => "new"

@@ -27,6 +27,13 @@ class ImagesController < ApplicationController
     end
   end
   
+  def showdetails
+    @images = Image.all
+    @image = Image.find(params[:id])
+    respond_to do |format| 
+      format.js 
+    end
+  end
   
   def queue
     respond_to do |format|

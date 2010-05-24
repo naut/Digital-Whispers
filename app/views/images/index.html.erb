@@ -1,16 +1,24 @@
-<% title "Images" %>
+<% title "Timeline" %>
 
-<table>
-  <tr>
-    <th>Owner</th>
-  </tr>
-  <% for image in @images %>
-    <tr>
-      <td><%=h image.entry.owner_id %></td>
-      <td><%= link_to "Show", image %></td>
-      <td><%= link_to "Edit", edit_image_path(image) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="content_top">
+	
+	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
+	
+</div>
 
-<p><%= link_to "New Image", new_image_path %></p>
+<div class="content_bottom clearfix">
+	
+
+	<%= render :partial => '/images/last_images' %>
+	
+	
+</div>
+
+<style type="text/css" media="screen">
+	
+	.header .dw_logo {
+		display: block;
+	}
+	
+</style>
+
