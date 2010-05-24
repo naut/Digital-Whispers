@@ -5,6 +5,7 @@ xml.rss :version => "2.0" do
       xml.entry do
         xml.id entry.id
         xml.user entry.user.username
+        entry.images.shift
         for image in entry.images do
           xml.img image.image.url.split(/\//).last
         end
