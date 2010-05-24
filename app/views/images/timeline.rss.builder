@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
       xml.entry do
         xml.title entry.id
         for image in entry.images do
-          xml.image "http://digital-whispers.net/"+image.image.url
+          xml.image "http://digital-whispers.net"+image.image.url
         end
       end
     end
