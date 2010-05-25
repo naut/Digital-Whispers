@@ -2,21 +2,7 @@
 
 <div class="content_top">
 <script type="text/javascript">
-	var params = {
-		        quality: "high",
-		        wmode: "transparent",
-		        allowscriptaccess: "never"
-		    };
 	
-	
-	var flashvars = {
-		baseURL: "/flash/timeline",
-		imageID: "", // ID zum Bild das aufgerufen werden soll
-		submissions: "" // IDs von allen Bildern des eingeloggten Users
-	};
-	
-
-	// swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars, params);	
 </script>
 
 	<div id="flashTimeline">Flash Timeline</div>
@@ -29,7 +15,82 @@
 <div class="content_bottom clearfix">
 	
 
-	<%= render :partial => '/images/last_images' %>
+	<h2>Last 20 submissions</h2>
+
+	<ul class="last_submissions">
+	<%@images.reverse[0...20].each do |s|%>
+		<li>
+			<%# link_to image_tag(s.image.url(:small)), s %>
+			<%= s.entry.user.username %>
+			<%#link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
+
+			<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails", :rel => s.id %>
+
+
+
+
+		</li>
+	<% end %>	
+	</ul>
+	
+
+
+	<script type="text/javascript" charset="utf-8">
+
+
+		jQuery(document).ready(function() {
+
+
+
+			$(".last_submissions a").click( function() {
+			        $.ajax({
+			            url: this.href,
+			            dataType: "script",
+			            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			        });
+			        return false;
+			    });
+
+
+
+
+			  if ($.fragment().id) {
+
+					$.ajax({
+			            url: "/images/"+$.fragment().id+"/showdetails",
+			            dataType: "script",
+			            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			        });
+			        return false;
+
+			  }
+
+
+				
+
+		});
+
+		location.hash = "id="+<%= @images.last.id %>
+
+		var params = {
+			        quality: "high",
+			        wmode: "transparent",
+			        allowscriptaccess: "never"
+			    };
+
+
+		var flashvars = {
+			baseURL: "/flash/timeline",
+			imageID: $.fragment().id, // ID zum Bild das aufgerufen werden soll
+			submissions: "<%= @user_submissions %>" // IDs von allen Bildern des eingeloggten Users
+		};
+
+
+		 swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars, params);
+		
+		
+	</script>
+
 	
 	
 </div>
