@@ -49,7 +49,7 @@ class ImagesController < ApplicationController
                 @image_queue << e
               end
             else
-              if e.images.size <= 3
+              if e.images.size <= 3 && e.images.size != 0
                 @image_queue << e
               end
             end
@@ -77,7 +77,7 @@ class ImagesController < ApplicationController
           @image_queue << e
         end
       else
-        if e.images.size <= 3
+        if e.images.size <= 3 && e.images.size != 0
           @image_queue << e
         end
       end
