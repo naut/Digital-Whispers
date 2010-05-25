@@ -2,13 +2,21 @@
 
 <div class="content_top">
 <script type="text/javascript">
+	var params = {
+		        quality: "high",
+		        wmode: "transparent",
+		        allowscriptaccess: "never"
+		    };
+	
+	
 	var flashvars = {
 		baseURL: "/flash/timeline",
 		imageID: "", // ID zum Bild das aufgerufen werden soll
 		submissions: "" // IDs von allen Bildern des eingeloggten Users
 	};
 	
-	//swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars);	
+
+	swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars, params);	
 </script>
 
 	<div id="flashTimeline">Flash Timeline</div>
