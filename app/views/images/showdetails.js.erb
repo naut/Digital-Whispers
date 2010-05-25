@@ -1,3 +1,5 @@
+$.setFragment({ "id" : $.queryString(this.href) })
+
 $("#showdetails").replaceWith('<div id="showdetails"><%= escape_javascript(render(:partial => "showdetails")) %></div>');
 
 

@@ -7,7 +7,7 @@
 		<%= s.entry.user.username %>
 		<%#link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
 		
-		<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails" %>
+		<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails", :rel => s.id %>
 
 		
 		
@@ -21,6 +21,8 @@
 	
 	
 	jQuery(document).ready(function() {
+
+		
 
 		$(".last_submissions a").click( function() {
 		        $.ajax({
