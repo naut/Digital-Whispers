@@ -6,7 +6,9 @@
 		<%# link_to image_tag(s.image.url(:small)), s %>
 		<%= s.entry.user.username %>
 		<%#link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
-		<a href="/images/<%= s.id %>/showdetails" id="some-link">test</a>
+		
+		<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails" %>
+
 		
 		
 		
