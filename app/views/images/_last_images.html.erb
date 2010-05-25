@@ -22,7 +22,7 @@
 	
 	jQuery(document).ready(function() {
 
-		
+
 
 		$(".last_submissions a").click( function() {
 		        $.ajax({
@@ -32,6 +32,20 @@
 		        });
 		        return false;
 		    });
+		
+		
+	
+		 
+		  if ($.fragment().id) {
+		    
+				$.ajax({
+		            url: "/images/"+$.fragment().id+"/showdetails",
+		            dataType: "script",
+		            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+		        });
+		        return false;
+		
+		  }
 
 
 	});
