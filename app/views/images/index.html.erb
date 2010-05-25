@@ -1,7 +1,16 @@
 <% title "Timeline" %>
 
 <div class="content_top">
+<script type="text/javascript">
+	var flashvars = {
+		imageID: "", // ID zum Bild das aufgerufen werden soll
+		submissions: "" // IDs von allen Bildern des eingeloggten Users
+	};
 	
+	swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars);	
+</script>
+
+	<div id="flashTimeline">Flash Timeline</div>
 	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
 	
 </div>
