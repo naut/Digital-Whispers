@@ -107,13 +107,14 @@ body {
 			float: right;
 			margin: 0 0 0 20px;
 		}
-		.nav_main li em {
-			color: #4ca13b;
-			font-style: normal;
-		}
+		
 		.nav_main li a {
 			color: #7c7c7c;
 			text-decoration: none;
+		}
+		.nav_main li.user a {
+			color: #4ca13b;
+			font-style: normal;
 		}
 		.nav_main li a:hover {
 			color: white;

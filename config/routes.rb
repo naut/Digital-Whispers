@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
                   :update => :any,
                   :showdetails => :get
                 }
+                
   map.resources :timeline,
                 :controller => 'images',
                 :collection => {
