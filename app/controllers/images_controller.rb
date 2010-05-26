@@ -127,7 +127,7 @@ class ImagesController < ApplicationController
   end
   
   def createfromflash
-    @image = Image.new(:image => params[:Filedata])
+    @image = Image.new(:image => (params[:Filedata]))
         
     if @image.save
       flash[:notice] = "Successfully created image."
