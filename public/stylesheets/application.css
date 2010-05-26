@@ -32,6 +32,13 @@ p { margin: 0 0 20px 0; }
 
 .right { float: right; } 
 
+h3 {
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 150%;
+}
 
 
 /* site
@@ -97,7 +104,7 @@ body {
 
 	.nav_main {
 		float: right;
-		font-family: 'DINOTCondRegular';
+		font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
 		font-size: 140%;
 		text-transform: uppercase;
 		line-height: 30px;
@@ -107,13 +114,14 @@ body {
 			float: right;
 			margin: 0 0 0 20px;
 		}
-		.nav_main li em {
-			color: #4ca13b;
-			font-style: normal;
-		}
+		
 		.nav_main li a {
 			color: #7c7c7c;
 			text-decoration: none;
+		}
+		.nav_main li.user a {
+			color: #4ca13b;
+			font-style: normal;
 		}
 		.nav_main li a:hover {
 			color: white;
@@ -191,7 +199,7 @@ body {
 		text-transform: uppercase;
 		color: white;
 		font-weight: normal;
-		font-family: 'DINOTCondRegular';
+		font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
 		font-size: 150%;
 	}
 	
@@ -235,7 +243,7 @@ body {
 	
 	
 h2 {
-	font-family: 'DINOTCondRegular';
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
 	color: #4ca13b;
 	font-size: 200%;
 	text-transform: uppercase;
@@ -245,7 +253,7 @@ h2 {
 
 .grey_button {
 	background: #171717;
-	font-family: 'DINOTCondRegular';
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
 	font-size: 140%;
 	display: block;
 	float: left;

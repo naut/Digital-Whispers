@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+    @user = User.find_by_name(params[:id])
+    @entries = Entry.find(:all, :conditions => ['owner_id=?',@user.id])
+  end
+  
 
   def confirm
     @user = User.pending.find_using_perishable_token(params[:confirmation_code])

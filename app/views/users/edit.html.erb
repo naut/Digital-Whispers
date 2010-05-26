@@ -2,15 +2,50 @@
 
 <%= render :partial => '/images/content_top' %>
 
-<div class="content_bottom">
+<div class="content_bottom clearfix">
 	
 	<h2>Edit your Profile</h2>
 
-	<div class="left" style="margin: 0 50px 0 0 "><%= render :partial => 'form' %></div>	
-	
-	<div class="left">
+	<% form_for @user do |f| %>
+	<div class="left" style="margin: 0 50px 0 0 ">
 		
+		
+		
+		  <%= f.error_messages %>
+		  <p>
+		    <%= f.label :username %><br />
+		    <%= f.text_field :username %>
+		  </p>
+		  <p>
+		    <%= f.label :email %><br />
+		    <%= f.text_field :email %>
+		  </p>
+		  <p>
+		    <%= f.label :password %><br />
+		    <%= f.password_field :password %>
+		  </p>
+		  <p>
+		    <%= f.label :password_confirmation %><br />
+		    <%= f.password_field :password_confirmation %>
+		  </p>
+		 
+		
+		  <p><%= f.submit "Submit" %></p>
+		
+		
+	</div>	
+	<div class="left">
+		 <p>
+		    <%= f.label :website %><br />
+		    <%= f.text_field :website %>
+		  </p>
+		  <p>
+		    <%= f.label :about %><br />
+		    <%= f.text_area :about %>
+		  </p>
 	</div>
+	<% end %>
+	
 	
 </div>
 
