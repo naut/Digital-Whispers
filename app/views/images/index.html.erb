@@ -17,8 +17,13 @@
 	<div id="showdetails">
 		
 		<ul class="view_submissions">
-			<li><%=  image_tag(@lastentry.images.first.image.url(:medium)) %>Orginal Upload</li>
-			<li><%=  image_tag(@lastentry.images.last.image.url(:medium)) %>Whispered Version</li>
+			<% if @lastentry.images.count != 1 %>
+				<li class="clearfix"><%=  image_tag(@lastentry.images.last.image.url(:medium)) %><p>Whispered Version</p></li>
+			<% else %>
+				<li class="in_progress clearfix"><span></span><p>Whispered Version in progress</p></li>
+			<% end %>
+			<li class="clearfix"><%=  image_tag(@lastentry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+		
 	
 		</ul>
 
@@ -26,7 +31,10 @@
 		<h4>http://digital-whispers.net/timeline#id=<%= @images.last.id%></h4>
 		<h4>posted by: <%= link_to @images.last.entry.user.username, user_path(@images.last.entry.user.username) %></h4>
 
-
+		<ul class="share_on">
+			<li class="twitter"><a target="_blank" href="http://twitter.com/home?status=my%20image%20on%20Digital%20Whispers:%20http://www.digital-whispers/timeline">share on twitter</a></li>
+			<li class="facebook"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.digital-whispers/timeline">share on facebook</a></li>
+		</ul>
 		
 		
 		

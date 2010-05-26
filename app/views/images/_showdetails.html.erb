@@ -1,7 +1,17 @@
-<ul class="view_submissions">
-	<li><%= image_tag(@image.image.url(:original), :height => "300") %></li>
-	<li><%=  @image.entry.id.images.first.image.id %></li>
-</ul>
+
+
+	<ul class="view_submissions">
+		<% if @image.entry.images.count != 1 %>
+			<li class="clearfix"><%=  image_tag(@image.entry.images.last.image.url(:medium)) %><p>Whispered Version</p></li>
+		<% else %>
+			<li class="in_progress clearfix"><span></span><p>Whispered Version in progress</p></li>
+		<% end %>
+		<li class="clearfix"><%=  image_tag(@image.entry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+	
+
+	</ul>
+
+
 
 <h1 class="big"><%= @image.id %></h1>
 <h4>http://digital-whispers.net/timeline#id=<%=  @image.id%></h4>
@@ -11,7 +21,7 @@
 
 
 
-
-
-<a title="share on twitter" class="twitter" target="_blank" href="http://twitter.com/home?status=my%20image%20on%20Digital%20Whispers:%20http://www.digital-whispers/timeline#id=<%= @image.id %>">share digital whispers on twitter</a>
-<a title="share on facebook" class="facebook"  target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.digital-whispers/timeline#id=<%= @image.id %>">share digital whispers on facebook</a>
+<ul class="share_on">
+	<li class="twitter"><a target="_blank" href="http://twitter.com/home?status=my%20image%20on%20Digital%20Whispers:%20http://www.digital-whispers/timeline">share on twitter</a></li>
+	<li class="facebook"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.digital-whispers/timeline">share on facebook</a></li>
+</ul>
