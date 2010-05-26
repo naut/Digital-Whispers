@@ -18,7 +18,7 @@
 	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
 
 	<ul class="last_submissions">
-	<%@images.reverse[0...20].each do |s|%>
+	<%@images.reverse[0...3].each do |s|%>
 		<li>
 			<%# link_to image_tag(s.image.url(:small)), s %>
 			<%= s.entry.user.username %>
@@ -43,12 +43,12 @@
 
 
 			$(".last_submissions a").click( function() {
-			        $.ajax({
-			            url: this.href,
-			            dataType: "script",
-			            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
-			        });
-			        return false;
+			      $.ajax({
+			          url: this.href,
+			          dataType: "script",
+			          beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			      });
+			      return false;
 			    });
 
 
@@ -71,13 +71,22 @@
 				
 
 		});
+		
+		function resetID(id) {
+		// id ändern
+		// zeug laden
+			$.ajax({
+			    url: "/images/"+id+"/showdetails",
+			    dataType: "script",
+			    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			});
+		}
 
 		
 
 		var params = {
 			        quality: "high",
-			        wmode: "transparent",
-			        allowscriptaccess: "never"
+			        wmode: "transparent"
 			    };
 				
 	
