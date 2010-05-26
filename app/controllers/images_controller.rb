@@ -6,6 +6,18 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all
+    if logged_in?
+      @user_entries = Entry.find(:all, :conditions => ['owner_id=?',current_user.id])
+      @user_submissions = Array.new
+      for entry in @user_entries
+        for image in entry.images
+          @user_submissions << image.id.to_s+","
+        end
+      end
+    end
+    
+  
+    
   end
   
   def show
@@ -49,7 +61,7 @@ class ImagesController < ApplicationController
                 @image_queue << e
               end
             else
-              if e.images.size <= 3
+              if e.images.size <= 3 && e.images.size != 0
                 @image_queue << e
               end
             end
@@ -77,7 +89,7 @@ class ImagesController < ApplicationController
           @image_queue << e
         end
       else
-        if e.images.size <= 3
+        if e.images.size <= 3 && e.images.size != 0
           @image_queue << e
         end
       end

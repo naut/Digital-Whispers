@@ -14,7 +14,19 @@ ActionController::Routing::Routes.draw do |map|
                 :member => {
                   :postupdate => :any,
                   :update => :any,
-                  :showdetails => :post
+                  :showdetails => :get
+                }
+  map.resources :timeline,
+                :controller => 'images',
+                :collection => {
+                  :timeline => :get,
+                  :queue => :get,
+                  :queue_html => :get
+                },
+                :member => {
+                  :postupdate => :any,
+                  :update => :any,
+                  :showdetails => :get
                 }
   
   map.login "login", :controller => "user_sessions", :action => "new"

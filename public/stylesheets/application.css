@@ -74,8 +74,12 @@ body {
 	background: #202020;
 	height: 30px;
 	padding: 0 40px;
-	position: relative;
+	position: absolute;
 	z-index: 100;
+	width: 880px;
+	left: 50%;
+	margin-left: -480px;
+	top: 0;
 }
 
 	.header .dw_logo {
@@ -115,12 +119,22 @@ body {
 			color: white;
 		}
 
+#flashTimeline {
+	position: absolute;
+	top: 30px;
+	z-index: 100;
+}
+
+#showdetails {
+	float: right;
+}
+
 .content_top {
 	min-height: 100px;
 	background: url(/images/body_bg.jpg) repeat-x center top #1e211f;
-	padding: 0 40px;
+
 	position: relative;
-	padding: 40px 40px 20px 40px;
+	padding: 70px 40px 20px 40px;
 }
 
 	.content_top .dw_logo {
@@ -144,7 +158,7 @@ body {
 	position: absolute;
 
 	right: -75px;
-	top: -20px;
+	top: 10px;
 }
 
 .hover_nav li {

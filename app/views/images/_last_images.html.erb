@@ -1,13 +1,56 @@
 <h2>Last 20 submissions</h2>
+
 <ul class="last_submissions">
 <%@images.reverse[0...20].each do |s|%>
 	<li>
 		<%# link_to image_tag(s.image.url(:small)), s %>
 		<%= s.entry.user.username %>
-		<%= link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
+		<%#link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
+		
+		<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails", :rel => s.id %>
+
+		
+		
 		
 	</li>
 <% end %>	
 </ul>
+
+
+<script type="text/javascript" charset="utf-8">
+	
+	
+	jQuery(document).ready(function() {
+
+
+
+		$(".last_submissions a").click( function() {
+		        $.ajax({
+		            url: this.href,
+		            dataType: "script",
+		            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+		        });
+		        return false;
+		    });
+		
+		
+	
+		 
+		  if ($.fragment().id) {
+		    
+				$.ajax({
+		            url: "/images/"+$.fragment().id+"/showdetails",
+		            dataType: "script",
+		            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+		        });
+		        return false;
+		
+		  }
+
+
+	});
+	
+	
+</script>
 
 

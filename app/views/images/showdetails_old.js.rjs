@@ -1,3 +1,4 @@
 page.replace_html "showdetails", render(:partial => "showdetails")
 
-page << "$('showdetails').style.display = 'block';"
+page << "$('#showdetails').style.display = 'block';"
+
