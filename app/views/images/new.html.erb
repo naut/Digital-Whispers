@@ -3,6 +3,9 @@
 
 <%= render :partial => 'content_top' %>
 
+<script type="text/javascript">
+		 swfobject.embedSWF("/flash/capture/capture.swf", "webcamImage", "340", "260", "10.0.0");
+</script>
 
 
 <div class="content_bottom">
@@ -13,6 +16,7 @@
 
 	<%= render :partial => 'form' %>
 	
+	<div id="webcamImage">flashWebcamCapture</div>
 	
 </div>
 
