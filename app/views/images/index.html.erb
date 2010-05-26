@@ -43,7 +43,12 @@
 
 
 			$(".last_submissions a").click( function() {
-			        resetID();
+			      $.ajax({
+			          url: this.href,
+			          dataType: "script",
+			          beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			      });
+			      return false;
 			    });
 
 
@@ -67,9 +72,13 @@
 
 		});
 		
-		function resetID() {
+		function resetID(id) {
+		// id ändern
+		
+		// zeug laden
+		
 			$.ajax({
-			    url: this.href,
+			    url: "/images/"+id+"/showdetails",
 			    dataType: "script",
 			    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
 			});
