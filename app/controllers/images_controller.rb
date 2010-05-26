@@ -120,7 +120,7 @@ class ImagesController < ApplicationController
     
     if @image.save
       flash[:notice] = "Successfully created image."
-      redirect_to @image
+      redirect_to "/timeline#id="+@image.id.to_s
     else
       render :action => 'new'
     end
