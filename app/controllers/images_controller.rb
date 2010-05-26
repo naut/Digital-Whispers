@@ -127,8 +127,10 @@ class ImagesController < ApplicationController
   end
   
   def createfromflash
+    @entry = Entry.new
     @image = @entry.images.new(:image => params[:Filedata])
     
+    @entry.save
     
     if @image.save
       flash[:notice] = "Successfully created image."
