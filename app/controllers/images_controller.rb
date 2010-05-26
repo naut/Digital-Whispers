@@ -127,19 +127,15 @@ class ImagesController < ApplicationController
   end
   
   def createfromflash
-    @entry = Entry.new
     @image = @entry.images.new(:image => params[:Filedata])
     
-    if logged_in?
-      @entry.owner_id = current_user.id
+    
+    if @image.save
+      flash[:notice] = "Successfully created image."
+      redirect_to "/timeline#id="+@image.id.to_s
     else
-      @entry.owner_id = 0
+      render :action => 'new'
     end
-    
-    @entry.save
-    @image.entry_id = @entry.id
-    @image.save
-    
   end
   
   
