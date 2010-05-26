@@ -18,7 +18,7 @@
 	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
 
 	<ul class="last_submissions">
-	<%@images.reverse[0...20].each do |s|%>
+	<%@images.reverse[0...3].each do |s|%>
 		<li>
 			<%# link_to image_tag(s.image.url(:small)), s %>
 			<%= s.entry.user.username %>
@@ -74,7 +74,7 @@
 		
 		function resetID(id) {
 		// id ändern
-		
+		alert(id);
 		// zeug laden
 		
 			$.ajax({
