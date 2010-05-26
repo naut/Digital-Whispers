@@ -9,15 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315151306) do
+ActiveRecord::Schema.define(:version => 20100526110922) do
 
   create_table "entries", :force => true do |t|
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "images", :force => true do |t|
-    t.integer  "owner_id"
+    t.integer  "entry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -36,6 +37,8 @@ ActiveRecord::Schema.define(:version => 20100315151306) do
     t.datetime "updated_at"
     t.string   "status",            :default => "pending"
     t.string   "perishable_token"
+    t.string   "website"
+    t.text     "about"
   end
 
 end
