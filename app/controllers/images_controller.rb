@@ -6,6 +6,8 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all
+    @lastentry = Entry.find(:last)
+    
     if logged_in?
       @user_entries = Entry.find(:all, :conditions => ['owner_id=?',current_user.id])
       @user_submissions = Array.new
