@@ -1,0 +1,38 @@
+<% title @user.username+"’s Profile" %>
+
+<%= render :partial => '/images/content_top' %>
+
+<div class="content_bottom">
+	
+	<h2><%= @user.username %>	
+	
+	<% if @user.website  && @user.website != ''		%>
+		<%if @user.website.match /^http:.*/ %>
+		<%= link_to @user.website[0..50], @user.website %>
+		<%else%>
+		<%= link_to @user.website[0..50], 'http://'+ @user.website %>
+		<%end%>		
+	<%end%>
+
+	</h2>
+
+	<% if @user.about  %><p style="width: 300px"><%= @user.about %></p><% end %>
+
+	<h3 style="margin-top: 50px">All Submissions by <%= @user.username %></h3>
+
+	
+
+	<ul class="last_submissions clearfix">
+		<% for entry in @entries %>
+			<% for image in entry.images %>
+			<li><%= link_to image_tag(image.image.url(:small)), "/timeline#id="+image.id.to_s%></li>
+			<% end %>
+		<% end %>
+	</ul>
+	
+
+	
+</div>
+
+
+

@@ -40,6 +40,12 @@ h3 {
 	font-size: 150%;
 }
 
+textarea {
+	font: 100%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+}
 
 /* site
 ----------------------------------*/
@@ -251,6 +257,12 @@ h2 {
 	font-weight: normal;
 }
 
+	h2 a {
+		font-size: 70%;
+		text-decoration: none;
+		color: #999;
+	}
+
 .grey_button {
 	background: #171717;
 	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
@@ -265,6 +277,8 @@ h2 {
 	text-decoration: none;
 	color: white;
 	padding: 7px 10px;
+	border: none;
+	cursor: pointer;
 }
 .grey_button span {
 	color: #999999
