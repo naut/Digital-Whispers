@@ -4,10 +4,12 @@ class Image < ActiveRecord::Base
   belongs_to :entry
   
   has_attached_file :image,
-  :styles => {  :red => ["", :jpg],
-                :blue => ["", :jpg],
-                :green => ["", :jpg],
-                :small => ["120x120>", :jpg]
+  :styles => {  :red => ["640x480#", :jpg],
+                :blue => ["640x480#", :jpg],
+                :green => ["640x480#", :jpg],
+                :small => ["120x120#", :jpg],
+                :medium => ["260x195#", :jpg],
+                :big => ["640x480#", :jpg]
   },
 
   :convert_options => { :red => '-channel Red -separate',

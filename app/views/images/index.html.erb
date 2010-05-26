@@ -13,26 +13,25 @@
 <div class="content_bottom clearfix">
 	
 
-	<h2>Last 20 submissions</h2>
 
-	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
-
-	<ul class="last_submissions">
-	<%@images.reverse[0...3].each do |s|%>
-		<li>
-			<%# link_to image_tag(s.image.url(:small)), s %>
-			<%= s.entry.user.username %>
-			<%#link_to_remote image_tag(s.image.url(:small)), :url => {:action => "showdetails", :id => s}, :html => {:style => "display: block;"}%>
-
-			<%= link_to image_tag(s.image.url(:small)), "/images/"+s.id.to_s+"/showdetails", :rel => s.id %>
-
-
-
-
-		</li>
-	<% end %>	
-	</ul>
+	<div id="showdetails">
+		
+		<ul class="view_submissions">
+			<li><%=  image_tag(@lastentry.images.first.image.url(:medium)) %>Orginal Upload</li>
+			<li><%=  image_tag(@lastentry.images.last.image.url(:medium)) %>Whispered Version</li>
 	
+		</ul>
+
+		<h1 class="big"><%= @images.last.id %></h1>
+		<h4>http://digital-whispers.net/timeline#id=<%= @images.last.id%></h4>
+		<h4>posted by: <%= link_to @images.last.entry.user.username, user_path(@images.last.entry.user.username) %></h4>
+
+
+		
+		
+		
+	</div>
+
 
 
 	<script type="text/javascript" charset="utf-8">
@@ -112,6 +111,10 @@
 	
 	.header .dw_logo {
 		display: block;
+	}
+	
+	#wrapper {
+		background: white;
 	}
 	
 </style>

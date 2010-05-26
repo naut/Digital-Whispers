@@ -42,9 +42,24 @@ h3 {
 
 textarea {
 	font: 100%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
-	width: 200px;
+	width: 300px;
 	height: 200px;
 	padding: 10px;
+}
+
+h1.big {
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 700%;
+	line-height: 1em;
+	font-weight: normal;
+	margin: 0 0 20px 0;
+}
+
+h4 {
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 130%;
 }
 
 /* site
@@ -139,9 +154,6 @@ body {
 	z-index: 100;
 }
 
-#showdetails {
-	float: right;
-}
 
 .content_top {
 	min-height: 100px;
@@ -294,6 +306,17 @@ h2 {
 	width: 120px;
 	margin: 0 30px 30px 0;
 	height: 120px;
+}
+
+.view_submissions {
+	float: right;
+}
+
+.view_submissions li {
+	float: right;
+	margin: 0 0 0 20px;
+	text-align: left;
+	width: 260px;
 }
 
 /* flash and error styling
