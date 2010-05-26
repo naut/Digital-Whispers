@@ -128,7 +128,7 @@ class ImagesController < ApplicationController
   
   def createfromflash
     @entry = Entry.new
-    @image = @entry.images.new(params[:Filedata][0])
+    @image = @entry.images.new(params)
     
     if logged_in?
       @entry.owner_id = current_user.id
