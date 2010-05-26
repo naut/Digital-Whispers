@@ -24,30 +24,34 @@
   </head>
   <body>
   
+		<div id="flashTimeline">Flash Timeline</div>
+
+		<div class="header clearfix">
+		
+			<h1 class="dw_logo"><a href="/">Digital Whispers</a></h1>
+		
+			<ul class="nav_main clearfix">
+					<!-- <li><%= link_to "Upload", new_image_path %></li> -->
+				<% if current_user %>
+					<li><%= link_to "Edit Profile", edit_user_path(:current) %></li>
+					<li><%= link_to "Logout", logout_path %></li>
+					<li>Logged in as <em><%= current_user.username %></em></li>
+				<% else %>
+					<li><%= link_to "Register", new_user_path %></li>
+					<li><%= link_to "Login", login_path %></li>
+				<% end %>	
+					
+			</ul>
+		
+		</div>
+
 		<div id="wrapper">
 			
 			<% flash.each do |name, msg| -%>
         		<%= content_tag :div, msg, :id => "flash_#{name}" %>
       		<% end %>
 		
-			<div class="header clearfix">
 			
-				<h1 class="dw_logo"><a href="/">Digital Whispers</a></h1>
-			
-				<ul class="nav_main clearfix">
-						<!-- <li><%= link_to "Upload", new_image_path %></li> -->
-					<% if current_user %>
-						<li><%= link_to "Edit Profile", edit_user_path(:current) %></li>
-						<li><%= link_to "Logout", logout_path %></li>
-						<li>Logged in as <em><%= current_user.username %></em></li>
-					<% else %>
-						<li><%= link_to "Register", new_user_path %></li>
-						<li><%= link_to "Login", login_path %></li>
-					<% end %>	
-						
-				</ul>
-			
-			</div>
 		
 			<%= yield %>
 		

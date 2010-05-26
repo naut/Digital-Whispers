@@ -1,12 +1,10 @@
 <% title "Timeline" %>
 
-<div class="content_top">
-<script type="text/javascript">
-	
-</script>
+<div class="content_top" style="height: 440px">
 
-	<div id="flashTimeline">Flash Timeline</div>
-	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
+
+	
+	
 	
 </div>
 
@@ -16,6 +14,8 @@
 	
 
 	<h2>Last 20 submissions</h2>
+
+	<div id="showdetails"><%= image_tag(@images.last.image.url(:original), :height => "300") %></div>
 
 	<ul class="last_submissions">
 	<%@images.reverse[0...20].each do |s|%>
