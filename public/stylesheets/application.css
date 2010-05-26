@@ -125,6 +125,10 @@ body {
 	z-index: 100;
 }
 
+#showdetails {
+	float: right;
+}
+
 .content_top {
 	min-height: 100px;
 	background: url(/images/body_bg.jpg) repeat-x center top #1e211f;
