@@ -2,10 +2,11 @@
 
 <%= render :partial => '/images/content_top' %>
 
-<div class="content_bottom">
+<div class="content_bottom clearfix">
 	
 	<h2>Login</h2>
 
+	<div class="left" style="margin: 0 50px 0 0 ">
 	<% form_for @user_session do |f| %>
 	  <%= f.error_messages %>
 	  <p>
@@ -18,6 +19,12 @@
 	  </p>
 	  <p><%= f.submit "Submit" %></p>
 	<% end %>	
+	</div>
+	
+	<div class="left">
+		<p><strong>Uploads from Registered Users</strong> are processed two times instead of one.<br/><a href="/users/new">Take a few seconds and register here</a></p>
+	
+	</div>
 	
 </div>
 
