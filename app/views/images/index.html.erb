@@ -43,12 +43,7 @@
 
 
 			$(".last_submissions a").click( function() {
-			        $.ajax({
-			            url: this.href,
-			            dataType: "script",
-			            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
-			        });
-			        return false;
+			        resetID();
 			    });
 
 
@@ -71,6 +66,15 @@
 				
 
 		});
+		
+		function resetID() {
+			$.ajax({
+			    url: this.href,
+			    dataType: "script",
+			    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			});
+			return false;
+		}
 
 		
 
