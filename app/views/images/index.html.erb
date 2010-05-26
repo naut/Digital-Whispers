@@ -74,15 +74,12 @@
 		
 		function resetID(id) {
 		// id ändern
-		alert(id);
 		// zeug laden
-		
 			$.ajax({
 			    url: "/images/"+id+"/showdetails",
 			    dataType: "script",
 			    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
 			});
-			return false;
 		}
 
 		
