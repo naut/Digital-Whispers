@@ -63,14 +63,16 @@
 			        });
 			        return false;
 
-			  }
+			  } else {
+				location.hash = "id="+<%= @images.last.id %>
+			}
 
 
 				
 
 		});
 
-		location.hash = "id="+<%= @images.last.id %>
+		
 
 		var params = {
 			        quality: "high",
