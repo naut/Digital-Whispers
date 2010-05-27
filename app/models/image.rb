@@ -10,7 +10,7 @@ class Image < ActiveRecord::Base
   :styles => {  :red => ["640x480#", :jpg],
                 :blue => ["640x480#", :jpg],
                 :green => ["640x480#", :jpg],
-                :small => ["120x120#", :jpg],
+                :small => ["160x120#", :jpg],
                 :medium => ["260x195#", :jpg],
                 :big => ["640x480#", :jpg]
   },

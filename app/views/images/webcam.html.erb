@@ -1,0 +1,28 @@
+<% title "Upload a new Image from your Webcam" %>
+
+
+<%= render :partial => 'content_top' %>
+
+<script type="text/javascript">
+		 swfobject.embedSWF("/flash/capture/capture.swf", "webcamImage", "340", "260", "10.0.0");
+</script>
+
+
+<div class="content_bottom">
+	
+	<h2>Upload a new Image from your Webcam</h2>
+
+	<p>Feel free to fill our Installation with new content. We'll process your images and transform them to sound and vice versa.<br/><strong>If you are a registered User</strong>, your uploads are processed twice which results in even more awesome results.</p>
+
+
+	<div id="webcamImage">Webcam Application</div>
+
+	
+</div>
+
+
+<style type="text/css" media="screen">
+	#wrapper {
+		background: white;
+	}
+</style>

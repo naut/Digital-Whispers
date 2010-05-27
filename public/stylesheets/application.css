@@ -134,6 +134,7 @@ body {
 		.nav_main li {
 			float: right;
 			margin: 0 0 0 20px;
+			position: relative;
 		}
 		
 		.nav_main li a {
@@ -147,6 +148,29 @@ body {
 		.nav_main li a:hover {
 			color: white;
 		}
+		.nav_main li ul {
+			display: none;
+			position: absolute;
+			left: -10px;
+			width: 140px;
+			background: #202020;
+			padding: 10px;
+		}
+		.nav_main li ul li {
+			margin: 0;
+			float: none;
+		}
+		.nav_main li:hover ul {
+			display: block;	
+		}
+		.nav_main li span {
+			color: #7c7c7c;
+		}
+		.nav_main li span:hover {
+			color: white;
+			cursor: pointer;
+		}
+		
 
 #flashTimeline {
 	position: absolute;

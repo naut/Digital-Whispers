@@ -1,26 +1,26 @@
-<% title "Upload a new Image" %>
+<% title "Draw a new Image" %>
 
 
 <%= render :partial => 'content_top' %>
 
+<script type="text/javascript">
+		 swfobject.embedSWF("/flash/draw/DrawPlane.swf", "drawImage", "880", "500", "10.0.0");
+</script>
 
 
 <div class="content_bottom">
 	
-	<h2>Upload a new Image</h2>
+	<h2>Draw a new Image</h2>
 
 	<p>Feel free to fill our Installation with new content. We'll process your images and transform them to sound and vice versa.<br/><strong>If you are a registered User</strong>, your uploads are processed twice which results in even more awesome results.</p>
 
-	<%= render :partial => 'form' %>
-	
 
+	<div id="drawImage">Drawing Application</div>
 	
 </div>
 
-
-
-
-
-
-
-
+<style type="text/css" media="screen">
+	#wrapper {
+		background: white;
+	}
+</style>

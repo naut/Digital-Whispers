@@ -126,7 +126,11 @@ class ImagesController < ApplicationController
     end
   end
   
+  def webcam
+  end
   
+  def draw
+  end
   
   def createfromflash
      @entry = Entry.new
@@ -142,13 +146,13 @@ class ImagesController < ApplicationController
       @image.entry_id = @entry.id
 
       if @image.save
-        
+        flash[:notice] = "Successfully created image. Thank you for your contribution."
+        redirect_to "/timeline#id="+@image.id.to_s
       else
         render :action => 'new'
       end
       
-      flash[:notice] = "Successfully created image. Thank you for your contribution."
-      redirect_to "/timeline#id="+@image.id.to_s
+      
    
     logger.info{@image.errors.full_messages.join}
 
