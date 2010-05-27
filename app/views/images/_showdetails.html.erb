@@ -13,7 +13,7 @@
 
 
 
-<h1 class="big"><%= @image.id %></h1>
+<h1 class="big"><%=@image.entry.created_at.hour %>:<%=@image.entry.created_at.min %></h1>
 <h4>http://digital-whispers.net/timeline#id=<%=  @image.id%></h4>
 <h4>posted by: <%= link_to @image.entry.user.username, user_path(@image.entry.user.username) %></h4>
 
