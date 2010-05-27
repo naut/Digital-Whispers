@@ -20,11 +20,14 @@
 
 	<h3 style="margin-top: 50px">All Submissions by <%= @user.username %></h3>
 
-	
 
 	<ul class="last_submissions clearfix">
 		<% for entry in @entries %>
-			<li><%= link_to image_tag(entry.images.last.image.url(:small)), "/timeline#id="+entry.images.last.image.id.to_s%></li>	
+			<li>
+				<% if entry.images.size != 0 %>
+				<%= link_to image_tag(entry.images.last.image.url(:small)), "/timeline#id="+entry.images.last.image.id.to_s%>
+				<% end %>
+			</li>	
 		<% end %>
 	</ul>
 	
