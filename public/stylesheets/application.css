@@ -113,7 +113,7 @@ body {
 	.header .dw_logo {
 		height: 13px;
 		width: 191px;
-		background: url(/images/dw_logo_smaller.png);
+		background: url(/images/dw_logo_smaller.png) no-repeat;
 		text-indent: -10000px;
 		float: left;
 		margin: 8px 0;
@@ -194,7 +194,7 @@ body {
 	.content_top .dw_logo {
 		height: 23px;
 		width: 343px;
-		background: url(/images/dw_logo.png);
+		background: url(/images/dw_logo.png)  no-repeat;
 		text-indent: -10000px;
 		position: relative;
 	}
