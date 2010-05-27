@@ -6,6 +6,7 @@
 		<li class="item">
 			<ul id="image_carousel2">
 				<% i = @image.entry.images.count %>
+				<% @image.entry.images.slice!(1) %>
 				<% for image in @image.entry.images.reverse %>
 					<li>
 						<%= image_tag(image.image.url(:medium)) %>
