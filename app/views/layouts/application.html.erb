@@ -31,6 +31,18 @@
 		
 			<h1 class="dw_logo"><a href="/">Digital Whispers</a></h1>
 		
+			<ul class="nav_main clearfix nav_left" style="float: left; position: relative; margin-left: -20px">
+				
+				<li><span>Whisper</span>
+					<ul>
+						<li><%= link_to "Upload Local File", new_image_path%></li>
+						<li><%= link_to "Take Webcam Image", "/timeline/webcam"%></li>
+						<li><%= link_to "Draw a new Image", "/timeline/draw"%></li>
+					</ul>
+				</li>
+				<li><a href="/timeline">Witness</a></li>
+			</ul>
+		
 			<ul class="nav_main clearfix">
 					<!-- <li><%= link_to "Upload", new_image_path %></li> -->
 					<li><%= link_to "About", "/page/about" %></li>
@@ -42,13 +54,7 @@
 					<li><%= link_to "Register", new_user_path %></li>
 					<li><%= link_to "Login", login_path %></li>
 				<% end %>	
-					<li><span>Whisper</span>
-						<ul>
-							<li><%= link_to "Upload Local File", new_image_path%></li>
-							<li><%= link_to "Take Webcam Image", "/timeline/webcam"%></li>
-							<li><%= link_to "Draw a new Image", "/timeline/draw"%></li>
-						</ul>
-					</li>
+					
 			</ul>
 		
 		</div>
