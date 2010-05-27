@@ -1,4 +1,7 @@
+require 'mime/types'
+
 class Image < ActiveRecord::Base
+  
   
               
   belongs_to :entry
@@ -25,6 +28,10 @@ class Image < ActiveRecord::Base
         :message => "Please upload an image file (jpeg, gif or png)."
 
 
-  
+        # Fix the mime types. Make sure to require the mime-types gem
+         def image_file=(data)
+           data.content_type = MIME::Types.type_for(data.original_filename).to_s
+           self.file = data
+         end
 
 end
