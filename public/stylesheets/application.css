@@ -164,7 +164,11 @@ body {
 			display: block;	
 		}
 		.nav_main li span {
-			cursor: arrow;
+			color: #7c7c7c;
+		}
+		.nav_main li span:hover {
+			color: white;
+			cursor: pointer;
 		}
 		
 
