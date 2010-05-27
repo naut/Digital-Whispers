@@ -119,7 +119,7 @@ class ImagesController < ApplicationController
     @image.entry_id = @entry.id
     
     if @image.save
-      flash[:notice] = "Successfully created image."
+      flash[:notice] = "Successfully created image. Thank you for your contribution."
       redirect_to "/timeline#id="+@image.id.to_s
     else
       render :action => 'new'
@@ -127,18 +127,8 @@ class ImagesController < ApplicationController
   end
   
   def createfromflash
-    @entry = Entry.new
-    @image = @entry.images.new(params[:Filedata])
-    
-    if logged_in?
-      @entry.owner_id = current_user.id
-    else
-      @entry.owner_id = 0
-    end
-    
-    @entry.save
-    @image.entry_id = @entry.id
-    
+    @image = Image.new(:image => (params[:Filedata]))
+        
     if @image.save
       flash[:notice] = "Successfully created image."
       redirect_to "/timeline#id="+@image.id.to_s

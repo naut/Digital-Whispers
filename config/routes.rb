@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
                 :member => {
                   :postupdate => :any,
                   :update => :any,
+                  :createfromflash => :any,
                   :showdetails => :get
                 }
                 
@@ -27,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
                 :member => {
                   :postupdate => :any,
                   :update => :any,
+                  :createfromflash => :any,
                   :showdetails => :get
                 }
   

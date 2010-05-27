@@ -363,6 +363,18 @@ h2 {
 		display: block;
 		height: 100%;
 	}
+	
+.image_slider {
+	overflow: auto;
+}
+	
+.image_slider ul {
+	height: 300px;
+	width: 3320px;
+}	
+	.image_slider li {
+		float: left;
+	}
 
 /* flash and error styling
 ----------------------------------*/
@@ -370,19 +382,21 @@ h2 {
 
 #flash_notice, #flash_error {
   padding: 5px 8px;
-  margin: 0 0 0 0;
+  margin: 30px 0 0 0;
 	padding: 10px 40px ;
+	background-color:#202020;
+	border-top:1px solid #444444;
 }
 
 #flash_notice {
-  background-color: white;
+
 	color: #4ca13b;
 }
 
 
 
 #flash_error {
-  background-color: white;
+
 	color: #FF0000;
 }
 
