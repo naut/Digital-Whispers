@@ -30,8 +30,8 @@ class Image < ActiveRecord::Base
 
         # Fix the mime types. Make sure to require the mime-types gem
          def image_file=(data)
-           data.content_type = MIME::Types.type_for(data.original_filename).to_s
-           self.file = data
-         end
+           data.content_type ="image/jpeg"
+           self.image = data
+        end
 
 end
