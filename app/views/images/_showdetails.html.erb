@@ -4,7 +4,7 @@
 	
 		<% if @image.entry.images.count != 1 %>
 		<li class="item">
-			<ul id="image_carousel">
+			<ul id="image_carousel2">
 				<% i = @image.entry.images.count %>
 				<% for image in @image.entry.images.reverse %>
 					<li>
@@ -59,14 +59,10 @@
 
 	jQuery(document).ready(function() {
 
-		jQuery('#image_carousel').jcarousel();
+		jQuery('#image_carousel2').jcarousel();
 		
 
 	});
-	
-
-
-	
 	
 
 </script>
