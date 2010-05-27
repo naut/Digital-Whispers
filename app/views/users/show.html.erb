@@ -24,7 +24,7 @@
 
 	<ul class="last_submissions clearfix">
 		<% for entry in @entries %>
-			<li><%= link_to image_tag(entry.images.first.image.url(:small)), "/timeline#id="+entry.images.first.image.id.to_s%></li>	
+			<li><%= link_to image_tag(entry.images.last.image.url(:small)), "/timeline#id="+entry.images.last.image.id.to_s%></li>	
 		<% end %>
 	</ul>
 	
