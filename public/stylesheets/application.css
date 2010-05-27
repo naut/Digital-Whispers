@@ -121,6 +121,7 @@ body {
 	}
 		.header .dw_logo a {
 			display: block;
+			height: 100%;
 		}
 
 	.nav_main {
