@@ -438,7 +438,7 @@
             if (this.tail != null && !this.inTail)
                 this.scrollTail(false);
             else
-                this.scroll(((this.options.wrap == 'both' || this.options.wrap == 'last') && this.options.size != null && this.last == this.options.size) ? 1 : this.first + "260");
+                this.scroll(((this.options.wrap == 'both' || this.options.wrap == 'last') && this.options.size != null && this.last == this.options.size) ? 1 : this.first + this.options.scroll);
         },
 
         /**
@@ -676,7 +676,7 @@
 
             // Animate
             if (!this.options.animation || a == false) {
-                this.list.css(this.lt, p + 'px');
+                this.list.css(this.lt, '260px');
                 scrolled();
             } else {
                 var o = !this.options.vertical ? {'left': p} : {'top': p};
