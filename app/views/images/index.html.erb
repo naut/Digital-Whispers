@@ -17,12 +17,33 @@
 	<div id="showdetails">
 		
 		<ul class="view_submissions">
+			
 			<% if @lastentry.images.count != 1 %>
-				<li class="clearfix"><%=  image_tag(@lastentry.images.last.image.url(:medium)) %><p>Whispered Version</p></li>
+			<li class="item">
+				<ul id="image_carousel">
+					<% i = @lastentry.images.count %>
+					<% for image in @lastentry.images.reverse %>
+						<li>
+							<%= image_tag(image.image.url(:medium)) %>
+							<p>
+								<% if @lastentry.images.count == i  %>
+								Final Whisper
+								<% i-=1 %>
+								<% else %>
+								<%= i %>. Whisper
+								<% i-=1 %>
+								<% end %>
+							</p>	
+						</li>
+					<% end %>
+					
+				</ul>
+			</li>
 			<% else %>
-				<li class="in_progress clearfix"><span></span><p>Whispered Version in progress</p></li>
+			
+				<li class="in_progress clearfix item"><span></span><p>Whispered Version in progress</p></li>
 			<% end %>
-			<li class="clearfix"><%=  image_tag(@lastentry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+			<li class="clearfix item"><%=  image_tag(@lastentry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
 		
 	
 		</ul>
@@ -47,7 +68,7 @@
 
 		jQuery(document).ready(function() {
 
-
+			jQuery('#image_carousel').jcarousel();
 
 			$(".last_submissions a").click( function() {
 			      $.ajax({
