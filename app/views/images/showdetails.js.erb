@@ -3,4 +3,11 @@ $.setFragment({ "id" : <%= @image.id%>})
 
 $("#showdetails").replaceWith('<div id="showdetails"><%= escape_javascript(render(:partial => "showdetails")) %></div>');
 
+jQuery(document).ready(function() {
+
+	jQuery('#image_carousel2').jcarousel();
+	
+});
+
+
 
