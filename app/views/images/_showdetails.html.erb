@@ -2,7 +2,7 @@
 
 	<ul class="view_submissions">
 	
-		<% if @image.entry.images.count != 1 %>
+		<% if @image.entry.images.count > 2 %>
 		<li class="item">
 			<ul id="image_carousel2">
 				<% i = @image.entry.images.count %>
@@ -23,6 +23,10 @@
 				
 			</ul>
 		</li>
+		<% elsif @image.entry.images.count == 2 %>
+		<li class="clearfix item"><%=  image_tag(@image.entry.images.last.image.url(:medium)) %><p>Final Whisper</p></li>
+		
+		
 		<% else %>
 		
 			<li class="in_progress clearfix item"><span></span><p>Whispered Version in progress</p></li>
