@@ -168,7 +168,11 @@ body {
 		}
 		.nav_main li span:hover {
 			color: white;
-			cursor: pointer;
+
+		}
+		
+		.nav_left a, .nav_left span {
+			
 		}
 		
 
@@ -180,7 +184,7 @@ body {
 
 
 .content_top {
-	min-height: 100px;
+	min-height: 110px;
 	background: url(/images/body_bg.jpg) repeat-x center top #1e211f;
 
 	position: relative;
@@ -217,7 +221,7 @@ body {
 	margin-right: 10px;
 }
 
-	.hover_nav li a {
+	.hover_nav li a.witness, .hover_nav li em {
 		display: block;
 		border: 1px solid #323234;
 		width: 150px;
@@ -227,15 +231,27 @@ body {
 		-o-border-radius: 5px;
 		border-radius: 5px;
 		text-decoration: none;
+		font-style: normal;
 	}
 	
-	.hover_nav li a span {
+	.hover_nav li a.witness span, .hover_nav li em span {
 		display: none;
 		color: white;
 		margin: 10px 0 0 0;
 	}
 	
-	.hover_nav li a strong {
+	.hover_nav li em a {
+		display: none;
+		color: white;
+		text-decoration: none;
+	}
+	
+	.hover_nav li em a:hover {
+		color: #4ca13b;
+	}
+
+	
+	.hover_nav li strong {
 		display: block;
 		text-align: right;
 		text-transform: uppercase;
@@ -245,19 +261,19 @@ body {
 		font-size: 150%;
 	}
 	
-	.hover_nav li a:hover {
+	.hover_nav li a.witness:hover, .hover_nav li em:hover {
 		border: 1px solid #737373;
 	}
 	
-	.hover_nav li a:hover span {
+	.hover_nav li a.witness:hover span, .hover_nav li em:hover span, .hover_nav li em:hover a {
 		display: block;
 	}
 	
-	.hover_nav li a:hover strong {
+	.hover_nav li a.witness:hover strong, .hover_nav li em:hover strong {
 		color: #4ca13b;
 	}
 	
-	.hover_nav a.whisper {
+	.hover_nav a.whisper, .hover_nav em.whisper {
 		background: url(/images/icon_whisper.png) 10px 12px no-repeat #171717;
 	}
 	.hover_nav a.witness {
@@ -316,14 +332,49 @@ h2 {
 	border: none;
 	cursor: pointer;
 }
-.grey_button span {
-	color: #999999
-}
+
 
 .grey_button:hover {
 	color: #4ca13b;
 }	
 
+.grey_button_nav {
+	background: #171717;
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-size: 140%;
+	display: block;
+	float: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	padding: 7px 10px;
+	border: none;
+	font-weight: normal;
+}
+
+.grey_button_nav a {
+	display: none;
+	font: 70%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	color: white;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+.grey_button_nav a:hover {
+	color: #4ca13b;
+}
+
+.grey_button_nav:hover a {
+	display: block;
+}
+
+.grey_button, .grey_button_nav span {
+	color: #999999
+}
 
 .last_submissions li {
 	float: left;
