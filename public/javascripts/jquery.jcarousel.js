@@ -676,7 +676,7 @@
 
             // Animate
             if (!this.options.animation || a == false) {
-                this.list.css(this.lt, '260px');
+                this.list.css(this.lt, p + 'px');
                 scrolled();
             } else {
                 var o = !this.options.vertical ? {'left': p} : {'top': p};
