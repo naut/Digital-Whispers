@@ -27,7 +27,7 @@
 	
 		</ul>
 
-		<h1 class="big"><%= @images.last.id %></h1>
+		<h1 class="big"><%=@images.last.entry.created_at.hour %>:<%=@images.last.entry.created_at.min %></h1>
 		<h4>http://digital-whispers.net/timeline#id=<%= @images.last.id%></h4>
 		<h4>posted by: <%= link_to @images.last.entry.user.username, user_path(@images.last.entry.user.username) %></h4>
 
