@@ -1,12 +1,38 @@
 
 
 	<ul class="view_submissions">
+	
 		<% if @image.entry.images.count != 1 %>
-			<li class="clearfix"><%=  image_tag(@image.entry.images.last.image.url(:medium)) %><p>Whispered Version</p></li>
+		<li class="item">
+			<ul id="image_carousel2">
+				<% i = @image.entry.images.count %>
+				<% for image in @image.entry.images.reverse %>
+					<li>
+						<%= image_tag(image.image.url(:medium)) %>
+						<p>
+							<% if @image.entry.images.count == i  %>
+							Final Whisper
+							<% i-=1 %>
+							<% else %>
+							<%= i %>. Whisper
+							<% i-=1 %>
+							<% end %>
+						</p>	
+					</li>
+				<% end %>
+				
+			</ul>
+		</li>
 		<% else %>
-			<li class="in_progress clearfix"><span></span><p>Whispered Version in progress</p></li>
+		
+			<li class="in_progress clearfix item"><span></span><p>Whispered Version in progress</p></li>
 		<% end %>
-		<li class="clearfix"><%=  image_tag(@image.entry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+		<li class="clearfix item"><%=  image_tag(@image.entry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+	
+	
+	
+	
+	
 	
 
 	</ul>
@@ -25,3 +51,5 @@
 	<li class="twitter"><a target="_blank" href="http://twitter.com/home?status=my%20image%20on%20Digital%20Whispers:%20http://www.digital-whispers/timeline">share on twitter</a></li>
 	<li class="facebook"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.digital-whispers/timeline">share on facebook</a></li>
 </ul>
+
+
