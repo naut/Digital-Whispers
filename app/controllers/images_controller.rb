@@ -126,7 +126,11 @@ class ImagesController < ApplicationController
     end
   end
   
+  def webcam
+  end
   
+  def draw
+  end
   
   def createfromflash
      @entry = Entry.new

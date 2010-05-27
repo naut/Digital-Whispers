@@ -42,7 +42,13 @@
 					<li><%= link_to "Register", new_user_path %></li>
 					<li><%= link_to "Login", login_path %></li>
 				<% end %>	
-					
+					<li><span>Upload</span>
+						<ul>
+							<li><%= link_to "Local File", new_image_path%></li>
+							<li><%= link_to "Webcam Image", "/timeline/webcam"%></li>
+							<li><%= link_to "Draw a new Image", "/timeline/draw"%></li>
+						</ul>
+					</li>
 			</ul>
 		
 		</div>

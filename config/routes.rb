@@ -9,7 +9,9 @@ ActionController::Routing::Routes.draw do |map|
                 :collection => {
                   :timeline => :get,
                   :queue => :get,
-                  :queue_html => :get
+                  :queue_html => :get,
+                  :webcam => :get,
+                  :draw => :get
                 },
                 :member => {
                   :postupdate => :any,
@@ -23,7 +25,9 @@ ActionController::Routing::Routes.draw do |map|
                 :collection => {
                   :timeline => :get,
                   :queue => :get,
-                  :queue_html => :get
+                  :queue_html => :get,
+                  :webcam => :get,
+                  :draw => :get
                 },
                 :member => {
                   :postupdate => :any,
