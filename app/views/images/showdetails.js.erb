@@ -5,7 +5,9 @@ $("#showdetails").replaceWith('<div id="showdetails"><%= escape_javascript(rende
 
 jQuery(document).ready(function() {
 
-	jQuery('#image_carousel2').jcarousel();
+	jQuery('#image_carousel2').jcarousel(
+		scroll: 1
+	);
 	
 });
 
