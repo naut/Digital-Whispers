@@ -1,0 +1,28 @@
+<% title "Contact Digital Whispers" %>
+
+<%= render :partial => '/images/content_top' %>
+
+<div class="content_bottom">
+
+
+	<h2>Digital Whispers is Live</h2>
+
+	<img src="http://lousyrecords.com/dw/webcam.jpg" width="400" name="refresh">
+	
+	<p>Feed refreshes every minute</p>
+
+	<script type="text/javascript" charset="utf-8">
+		
+	var t = 60 // interval in seconds
+	image = "http://lousyrecords.com/dw/webcam.jpg" //name of the image
+	function Start() {
+	tmp = new Date();
+	tmp = "?"+tmp.getTime()
+	document.images["refresh"].src = image+tmp
+	setTimeout("Start()", t*1000)
+	}
+	Start();
+		
+	</script>
+	
+</div>
