@@ -13,7 +13,7 @@
 					<li>
 						<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
 						<p>
-							<% if @image.entry.images.count == i  %>
+							<% if @image.entry.images.count == i+1  %>
 							Final Whisper
 							<% i-=1 %>
 							<% else %>
