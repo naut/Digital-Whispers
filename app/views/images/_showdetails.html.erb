@@ -7,19 +7,22 @@
 			<ul id="image_carousel2">
 				
 				<% @image.entry.images.slice!(0) %>
-				<% i = @image.entry.images.count-1 %>
+				<% i = @image.entry.images.count - 1%>
+				<% j = 1 %>
 				<% for image in @image.entry.images %>
 				
 					<li>
 						<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
 						<p>
-							<% if @image.entry.images.count == i+1  %>
+							
+							<% if i == j %>
 							Final Whisper
-							<% i-=1 %>
 							<% else %>
-							<%= i %>. Whisper
-							<% i-=1 %>
+							<%= j %>
+							<% j+=1 %>. Whisper
 							<% end %>
+							
+							
 						</p>	
 					</li>
 				<% end %>
