@@ -17,33 +17,50 @@
 	<div id="showdetails">
 		
 		<ul class="view_submissions">
-			
-			<% if @lastentry.images.count != 1 %>
-			<li class="item">
-				<ul id="image_carousel">
-					<% i = @lastentry.images.count %>
-					<% for image in @lastentry.images.reverse %>
-						<li>
-							<%= image_tag(image.image.url(:medium)) %>
-							<p>
-								<% if @lastentry.images.count == i  %>
-								Final Whisper
-								<% i-=1 %>
-								<% else %>
-								<%= i %>. Whisper
-								<% i-=1 %>
-								<% end %>
-							</p>	
-						</li>
-					<% end %>
-					
-				</ul>
-			</li>
-			<% else %>
-			
-				<li class="in_progress clearfix item"><span></span><p>Whispered Version in progress</p></li>
-			<% end %>
-			<li class="clearfix item"><%=  image_tag(@lastentry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+		
+			<li class="clearfix item" style="float: left"><%=  image_tag(@lastentry.images.first.image.url(:medium), :width => "260", :height => "195") %><p>Orginal Upload</p></li>
+				<% if @lastentry.images.count > 2 %>
+				<li class="item" style="float: right">
+					<ul id="image_carousel2">
+
+						<% @lastentry.images.slice!(0) %>
+						<% i = @lastentry.images.count-1 %>
+						<% for image in @lastentry.images.reverse %>
+
+							<li>
+								<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
+								<p>
+									<% if @lastentry.images.count == i+1  %>
+									Final Whisper
+									<% i-=1 %>
+									<% else %>
+									<%= i %>. Whisper
+									<% i-=1 %>
+									<% end %>
+								</p>	
+							</li>
+						<% end %>
+
+					</ul>
+				</li>
+				<% elsif @lastentry.images.count == 2 %>
+				<li class="clearfix item" style="float: right"><%=  image_tag(@lastentry.images.last.image.url(:medium), :width => "260", :height => "195") %><p>Final Whisper</p></li>
+
+
+				<% else %>
+
+					<li class="in_progress clearfix item" style="float: right"><span></span><p>Whispered Version in progress</p></li>
+				<% end %>
+
+
+
+		
+		
+		
+		
+		
+		
+		
 		
 	
 		</ul>
@@ -65,10 +82,16 @@
 
 	<script type="text/javascript" charset="utf-8">
 
+	
 
 		jQuery(document).ready(function() {
 
-			jQuery('#image_carousel').jcarousel();
+			
+
+		
+			jQuery('#image_carousel').jcarousel({
+			        scroll: 1
+			    });
 
 			$(".last_submissions a").click( function() {
 			      $.ajax({
@@ -94,6 +117,7 @@
 			  } else {
 				location.hash = "id="+<%= @images.last.id %>
 			}
+			
 
 
 				
