@@ -55,6 +55,9 @@
 				<% else %>
 
 					<li class="in_progress clearfix item" style="float: right"><span></span><p>Whispered Version in progress</p></li>
+					
+					
+				
 				<% end %>
 
 
@@ -152,7 +155,8 @@
 		var flashvars = {
 			baseURL: "/flash/timeline",
 			imageID: $.fragment().id, // ID zum Bild das aufgerufen werden soll
-			submissions: "<%= @user_submissions %>" // IDs von allen Bildern des eingeloggten Users
+			submissions: "<%= @user_submissions %>", // IDs von allen Bildern des eingeloggten Users
+			totalduration: 200
 		};
 
 	

@@ -131,6 +131,10 @@ class ImagesController < ApplicationController
   def draw
   end
   
+  def checkforwhisper
+    
+  end
+  
   def createfromflash
      @entry = Entry.new
      @image = Image.new(:image_file => params[:Filedata])   
