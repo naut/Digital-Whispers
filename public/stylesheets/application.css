@@ -464,6 +464,13 @@ h2 {
   
 }
 
+*::selection {
+	background: rgba(255,255,255,0);
+	}
+*::-moz-selection {
+	background: rgba(255,255,255,0);
+}
+
 .jcarousel-container-horizontal {
     width: 270px;
 }

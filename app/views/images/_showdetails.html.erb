@@ -1,6 +1,6 @@
 
 
-	<ul class="view_submissions">
+	<ul class="view_submissions" ondragstart="return false">
 	<li class="clearfix item" style="float: left"><%=  image_tag(@image.entry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
 		<% if @image.entry.images.count > 2 %>
 		<li class="item" style="float: right">
