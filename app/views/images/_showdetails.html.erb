@@ -4,7 +4,7 @@
 	<li class="clearfix item" style="float: left"><%=  image_tag(@image.entry.images.first.image.url(:medium), :width => "260", :height => "195") %><p>Orginal Upload</p></li>
 		<% if @image.entry.images.count > 2 %>
 		<li class="item" style="float: right">
-			<ul id="image_carousel_ajax">
+			<ul id="image_carousel2">
 				
 				<% @image.entry.images.slice!(0) %>
 				<% i = @image.entry.images.count-1 %>
