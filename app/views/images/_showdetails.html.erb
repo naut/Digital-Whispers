@@ -1,7 +1,7 @@
 
 
 	<ul class="view_submissions" ondragstart="return false">
-	<li class="clearfix item" style="float: left"><%=  image_tag(@image.entry.images.first.image.url(:medium)) %><p>Orginal Upload</p></li>
+	<li class="clearfix item" style="float: left"><%=  image_tag(@image.entry.images.first.image.url(:medium), :width => "260", :height => "195") %><p>Orginal Upload</p></li>
 		<% if @image.entry.images.count > 2 %>
 		<li class="item" style="float: right">
 			<ul id="image_carousel2">
@@ -11,7 +11,7 @@
 				<% for image in @image.entry.images.reverse %>
 				
 					<li>
-						<%= image_tag(image.image.url(:medium)) %>
+						<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
 						<p>
 							<% if @image.entry.images.count == i  %>
 							Final Whisper
@@ -27,7 +27,7 @@
 			</ul>
 		</li>
 		<% elsif @image.entry.images.count == 2 %>
-		<li class="clearfix item" style="float: right"><%=  image_tag(@image.entry.images.last.image.url(:medium)) %><p>Final Whisper</p></li>
+		<li class="clearfix item" style="float: right"><%=  image_tag(@image.entry.images.last.image.url(:medium), :width => "260", :height => "195") %><p>Final Whisper</p></li>
 		
 		
 		<% else %>
