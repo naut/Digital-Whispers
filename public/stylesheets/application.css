@@ -373,9 +373,11 @@ h2 {
 	display: block;
 }
 
-.grey_button, .grey_button_nav span {
+.grey_button span, .grey_button_nav span {
 	color: #999999
 }
+
+
 
 .last_submissions li {
 	float: left;
@@ -451,7 +453,6 @@ h2 {
 	.image_slider li {
 		float: left;
 	}
-
 
 
 

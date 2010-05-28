@@ -8,7 +8,7 @@
 				
 				<% @image.entry.images.slice!(0) %>
 				<% i = @image.entry.images.count-1 %>
-				<% for image in @image.entry.images.reverse %>
+				<% for image in @image.entry.images %>
 				
 					<li>
 						<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
@@ -46,7 +46,7 @@
 
 
 
-<h1 class="big"><%=@image.entry.created_at.hour %>:<%=@image.entry.created_at.min %></h1>
+<h1 class="big"><%=@image.entry.created_at.strftime("%H:%M") %></h1>
 <h4>http://digital-whispers.net/timeline#id=<%=  @image.id%></h4>
 <h4>posted by: <%= link_to @image.entry.user.username, user_path(@image.entry.user.username) %></h4>
 
