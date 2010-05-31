@@ -1,0 +1,658 @@
+/* Normalising
+----------------------------------*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+ol, ul { list-style: none; }
+
+table { border-spacing: 0; }
+
+fieldset, img { border: 0; }
+
+caption, th { text-align: left; }
+
+/* Basic Stuff 
+----------------------------------*/
+
+abbr, acronym, .help { font-style: italic; cursor: help; }
+
+a { outline: none; color: black; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix { zoom: 1; }
+
+.clearer { clear: both; }
+
+p { margin: 0 0 20px 0; }
+
+.left { float: left; }
+
+.right { float: right; } 
+
+h3 {
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 150%;
+}
+
+textarea {
+	font: 100%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+}
+
+h1.big {
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 700%;
+	line-height: 1em;
+	font-weight: normal;
+	margin: 0 0 20px 0;
+}
+
+h4 {
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 130%;
+}
+
+/* site
+----------------------------------*/
+
+html {
+	height: 100%;
+}
+
+body {
+	font: 85%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	background: url(/images/body_bg.jpg) center top repeat-x #1e211f;
+	height: 100%;
+}
+
+#wrapper {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	min-height: 100%;
+	background: url(/images/logo_bg.jpg) no-repeat right 330px white;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+	width: 880px;
+	padding: 0 40px;
+	margin-left: -480px;
+	left: 50%;
+	background: white;
+	border-top: 1px solid #dcdcdc;
+	line-height: 30px;
+	font-size: 90%;
+}
+
+
+.header {
+	background: #202020;
+	height: 30px;
+	padding: 0 40px;
+	position: absolute;
+	z-index: 100;
+	width: 880px;
+	left: 50%;
+	margin-left: -480px;
+	top: 0;
+}
+
+	.header .dw_logo {
+		height: 13px;
+		width: 191px;
+		background: url(/images/dw_logo_smaller.png) no-repeat;
+		text-indent: -10000px;
+		float: left;
+		margin: 8px 0;
+		display: none;
+	}
+		.header .dw_logo a {
+			display: block;
+			height: 100%;
+		}
+
+	.nav_main {
+		float: right;
+		font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+		font-size: 140%;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: white;
+	}
+		.nav_main li {
+			float: right;
+			margin: 0 0 0 20px;
+			position: relative;
+		}
+		
+		.nav_main li a {
+			color: #7c7c7c;
+			text-decoration: none;
+		}
+		.nav_main li.user a {
+			color: #4ca13b;
+			font-style: normal;
+		}
+		.nav_main li a:hover {
+			color: white;
+		}
+		.nav_main li ul {
+			display: none;
+			position: absolute;
+			left: -10px;
+			width: 140px;
+			background: #202020;
+			padding: 10px;
+		}
+		.nav_main li ul li {
+			margin: 0;
+			float: none;
+		}
+		.nav_main li:hover ul {
+			display: block;	
+		}
+		.nav_main li span {
+			color: #7c7c7c;
+		}
+		.nav_main li span:hover {
+			color: white;
+
+		}
+		
+		.nav_left a, .nav_left span {
+			
+		}
+		
+
+#flashTimeline {
+	position: absolute;
+	top: 30px;
+	z-index: 100;
+}
+
+
+.content_top {
+	min-height: 110px;
+	background: url(/images/body_bg.jpg) repeat-x center top #1e211f;
+
+	position: relative;
+	padding: 70px 40px 20px 40px;
+}
+
+	.content_top .dw_logo {
+		height: 30px;
+		width: 344px;
+		background: url(/images/dw_logo.png)  no-repeat;
+		text-indent: -10000px;
+		position: relative;
+	}
+		.content_top .dw_logo a {
+			display: block;
+		}
+	.content_top p {
+		color: white;
+		font-size: 110%;
+		line-height: 1.5em;
+	}
+	
+	
+.installation {
+	position: absolute;
+
+	right: -75px;
+	top: 10px;
+}
+
+.hover_nav li {
+	float: left;
+	position: relative;
+	margin-right: 10px;
+}
+
+	.hover_nav li a.witness, .hover_nav li em {
+		display: block;
+		border: 1px solid #323234;
+		width: 150px;
+		padding: 10px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+		border-radius: 5px;
+		text-decoration: none;
+		font-style: normal;
+	}
+	
+	.hover_nav li a.witness span, .hover_nav li em span {
+		display: none;
+		color: white;
+		margin: 10px 0 0 0;
+	}
+	
+	.hover_nav li em a {
+		display: none;
+		color: white;
+		text-decoration: none;
+	}
+	
+	.hover_nav li em a:hover {
+		color: #4ca13b;
+	}
+
+	
+	.hover_nav li strong {
+		display: block;
+		text-align: right;
+		text-transform: uppercase;
+		color: white;
+		font-weight: normal;
+		font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+		font-size: 150%;
+	}
+	
+	.hover_nav li a.witness:hover, .hover_nav li em:hover {
+		border: 1px solid #737373;
+	}
+	
+	.hover_nav li a.witness:hover span, .hover_nav li em:hover span, .hover_nav li em:hover a {
+		display: block;
+	}
+	
+	.hover_nav li a.witness:hover strong, .hover_nav li em:hover strong {
+		color: #4ca13b;
+	}
+	
+	.hover_nav a.whisper, .hover_nav em.whisper {
+		background: url(/images/icon_whisper.png) 10px 12px no-repeat #171717;
+	}
+	.hover_nav a.witness {
+		background: url(/images/icon_witness.png) 10px 12px no-repeat #171717;
+	}
+
+
+
+.content_bottom {
+	padding: 30px 40px 60px 40px;
+
+}
+
+.teaser_list li {
+	float: left;
+	width: 270px;
+	margin-left: 30px;
+}
+	.teaser_list li:first-child {
+		margin-left: 0;
+	}
+	.teaser_list li img {
+		margin: 0 0 20px 0;
+	}
+	
+	
+h2 {
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	color: #4ca13b;
+	font-size: 200%;
+	text-transform: uppercase;
+	margin: 0 0 20px 0;
+	font-weight: normal;
+}
+
+	h2 a {
+		font-size: 70%;
+		text-decoration: none;
+		color: #999;
+	}
+
+.grey_button {
+	background: #171717;
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-size: 140%;
+	display: block;
+	float: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	padding: 7px 10px;
+	border: none;
+	cursor: pointer;
+}
+
+
+.grey_button:hover {
+	color: #4ca13b;
+}	
+
+.grey_button_nav {
+	background: #171717;
+	font-family: 'DINOTCondRegular', "Lucida Grande", Arial, sans-serif;
+	font-size: 140%;
+	display: block;
+	float: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	padding: 7px 10px;
+	border: none;
+	font-weight: normal;
+}
+
+.grey_button_nav a {
+	display: none;
+	font: 70%/1.5em "DINOT-RegularRegular", "Lucida Grande", Arial, sans-serif;
+	color: white;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+.grey_button_nav a:hover {
+	color: #4ca13b;
+}
+
+.grey_button_nav:hover a {
+	display: block;
+}
+
+.grey_button span, .grey_button_nav span {
+	color: #999999
+}
+
+
+
+.last_submissions li {
+	float: left;
+	width: 160px;
+	margin: 0 30px 30px 0;
+	height: 120px;
+}
+
+.view_submissions {
+	float: right;
+}
+
+.view_submissions li.item {
+	float: right;
+	margin: 0 0 0 20px;
+	text-align: left;
+	width: 270px;
+}
+	.view_submissions li img {
+		border: 5px solid black;
+		float: left;
+	}
+	
+	.view_submissions li.in_progress span {
+		display: block;
+		width: 260px;
+		height: 196px;
+		border: 5px solid #EEE;
+		float: left;
+	}
+	
+	.view_submissions p {
+		clear: both;
+		padding: 5px 0 0 0;
+	}
+	
+	.view_submissions li.in_progress {
+		background: url(/images/ajax-loader.gif) no-repeat center;
+		height: 196px;
+		
+	}
+
+.share_on {
+	margin: 20px 0 0 0;
+}
+	
+.share_on li{
+	float: left;
+	width: 32px;
+	height: 32px;
+	text-indent: -1000px;
+	margin: 0 10px 0 0;
+}
+	.share_on li.twitter a {
+		background: url(/images/icon_twitter.png);
+	}
+	.share_on li.facebook a {
+		background: url(/images/icon_facebook.png);
+	}
+	.share_on li a {
+		display: block;
+		height: 100%;
+	}
+	
+.image_slider {
+	overflow: auto;
+}
+	
+.image_slider ul {
+	height: 300px;
+	width: 3320px;
+}	
+	.image_slider li {
+		float: left;
+	}
+
+
+
+/* image carousel
+----------------------------------*/
+
+
+.jcarousel-container {
+    position: relative;
+  
+}
+
+*::selection {
+	background: rgba(255,255,255,0);
+	}
+*::-moz-selection {
+	background: rgba(255,255,255,0);
+}
+
+.jcarousel-container-horizontal {
+    width: 270px;
+}
+
+.jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-clip-horizontal {
+    width: 270px;
+    height: 245px;
+}
+
+.jcarousel-clip-vertical {
+    width:  75px;
+    height: 245px;
+}
+
+.jcarousel-item {
+    width: 270px;
+    height: 245px;
+}
+
+.jcarousel-item-horizontal {
+    margin-right: 10px;
+}
+
+.jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-next-horizontal {
+    position: absolute;
+    bottom: -20px;
+    left: 35px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent url(/images/circle_nav_bg_right.png) no-repeat 0 0;
+}
+
+.jcarousel-next-horizontal:hover {
+    background-position: 0 -30px;
+}
+
+.jcarousel-next-horizontal:active {
+    background-position: 0 -30px;
+}
+
+.jcarousel-next-disabled-horizontal,
+.jcarousel-next-disabled-horizontal:hover,
+.jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: 0 -60px;
+}
+
+.jcarousel-prev-horizontal {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent url(/images/circle_nav_bg_left.png) no-repeat 0 0;
+}
+
+.jcarousel-prev-horizontal:hover {
+    background-position: 0 -30px;
+}
+
+.jcarousel-prev-horizontal:active {
+    background-position: 0 -30px;
+}
+
+.jcarousel-prev-disabled-horizontal,
+.jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: 0 -60px;
+}
+
+
+
+
+/* flash and error styling
+----------------------------------*/
+
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 30px 0 0 0;
+	padding: 10px 40px ;
+	background-color:#202020;
+	border-top:1px solid #444444;
+}
+
+#flash_notice {
+
+	color: #4ca13b;
+}
+
+
+
+#flash_error {
+
+	color: #FF0000;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  padding: 5px 5px 5px 15px;
+  margin: 0;
+font-size: 150%;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+
+/* fonts
+----------------------------------*/
+
+
+@font-face {
+	font-family: 'DINOT-RegularRegular';
+	src: url('/fonts/dinot-regular-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-regular-webfont.woff') format('woff'), url('/fonts/dinot-regular-webfont.ttf') format('truetype'), url('/fonts/dinot-regular-webfont.svg#webfontAMNHgJJL') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINOTCondRegular';
+	src: url('/fonts/dinot-condregular-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-condregular-webfont.woff') format('woff'), url('/fonts/dinot-condregular-webfont.ttf') format('truetype'), url('/fonts/dinot-condregular-webfont.svg#webfontLgcfproI') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINOT-BoldRegular';
+	src: url('/fonts/dinot-bold-webfont.eot');
+	src: local('☺'), url('/fonts/dinot-bold-webfont.woff') format('woff'), url('/fonts/dinot-bold-webfont.ttf') format('truetype'), url('/fonts/dinot-bold-webfont.svg#webfont1NJYe7Vm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+

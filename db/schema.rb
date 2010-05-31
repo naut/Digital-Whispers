@@ -9,12 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100526110922) do
+ActiveRecord::Schema.define(:version => 20100531123452) do
 
   create_table "entries", :force => true do |t|
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "exhibition_id"
+  end
+
+  create_table "exhibitions", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "images", :force => true do |t|

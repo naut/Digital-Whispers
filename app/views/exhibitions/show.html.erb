@@ -1,0 +1,189 @@
+<% title "Timeline" %>
+
+<div class="content_top" style="height: 440px">
+
+
+	
+	
+	
+</div>
+
+
+
+<div class="content_bottom clearfix">
+	
+	<h1><%= @exhibition.title %></h1>
+
+	<div id="showdetails">
+		
+		<ul class="view_submissions">
+		
+			<li class="clearfix item" style="float: left"><%=  image_tag(@lastentry.images.first.image.url(:medium), :width => "260", :height => "195") %><p>Orginal Upload</p></li>
+				<% if @lastentry.images.count > 2 %>
+				<li class="item" style="float: right">
+					<ul id="image_carousel2">
+
+						
+						<% @lastentry.images.slice!(0) %>
+						<% i =@lastentry.images.count - 1%>
+						<% j = 1 %>
+						<% for image in @lastentry.images %>
+
+							<li>
+								<%= image_tag(image.image.url(:medium), :width => "260", :height => "195") %>
+								<p>
+
+									<% if i == j %>
+									Final Whisper
+									<% else %>
+									<%= j %>
+									<% j+=1 %>. Whisper
+									<% end %>
+
+
+								</p>	
+							</li>
+						<% end %>
+						
+
+					</ul>
+				</li>
+				<% elsif @lastentry.images.count == 2 %>
+				<li class="clearfix item" style="float: right"><%=  image_tag(@lastentry.images.last.image.url(:medium), :width => "260", :height => "195") %><p>Final Whisper</p></li>
+
+
+				<% else %>
+
+					<li class="in_progress clearfix item" style="float: right"><span></span><p>Whispered Version in progress</p></li>
+					
+					
+				
+				<% end %>
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		</ul>
+
+		<h1 class="big"><%=@images.last.entry.created_at.strftime("%H:%M")%></h1>
+		<h4>http://digital-whispers.net/timeline#id=<%= @images.last.id%></h4>
+		<h4>posted by: <%= link_to @images.last.entry.user.username, user_path(@images.last.entry.user.username) %></h4>
+
+		<ul class="share_on">
+			<li class="twitter"><a target="_blank" href="http://twitter.com/home?status=my%20image%20on%20Digital%20Whispers:%20http://www.digital-whispers.net/timeline">share on twitter</a></li>
+			<li class="facebook"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.digital-whispers.net/timeline">share on facebook</a></li>
+		</ul>
+		
+		
+		
+	</div>
+
+
+
+	<script type="text/javascript" charset="utf-8">
+
+	
+
+		jQuery(document).ready(function() {
+
+			
+
+		
+			jQuery('#image_carousel').jcarousel({
+			        scroll: 1
+			    });
+
+			$(".last_submissions a").click( function() {
+			      $.ajax({
+			          url: this.href,
+			          dataType: "script",
+			          beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			      });
+			      return false;
+			    });
+
+
+
+
+			  if ($.fragment().id) {
+
+					$.ajax({
+			            url: "/images/"+$.fragment().id+"/showdetails",
+			            dataType: "script",
+			            beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			        });
+			        return false;
+
+			  } else {
+				location.hash = "id="+<%= @images.last.id %>
+			}
+			
+
+
+				
+
+		});
+		
+		function resetID(id) {
+		// id ändern
+		// zeug laden
+			$.ajax({
+			    url: "/images/"+id+"/showdetails",
+			    dataType: "script",
+			    beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");},
+			});
+		}
+
+		
+
+		var params = {
+			        quality: "high",
+			        wmode: "transparent"
+			    };
+				
+		
+	
+
+		var flashvars = {
+			baseURL: "/flash/timeline",
+			imageID: $.fragment().id, // ID zum Bild das aufgerufen werden soll
+			submissions: "<%= @user_submissions %>", // IDs von allen Bildern des eingeloggten Users
+			totalduration: 200
+		};
+
+	
+
+		 swfobject.embedSWF("/flash/timeline/timeline.swf", "flashTimeline", "100%", "500", "10.0.0", "", flashvars, params);
+		
+		
+
+	</script>
+
+	
+	
+</div>
+
+<style type="text/css" media="screen">
+	
+	.header .dw_logo {
+		display: block;
+	}
+	
+	#wrapper {
+		background: white;
+	}
+	
+	.nav_left {
+		margin-left: 0 !IMPORTANT;
+	}
+	
+</style>
+

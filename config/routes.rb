@@ -1,5 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   
+  
+  map.resources :exhibitions,
+                :collection => {
+                  :recent => :get,
+                  :timeline => :get
+                }
+
+  
   map.resources :entries,
                 :collection => {
                   :recent => :get
