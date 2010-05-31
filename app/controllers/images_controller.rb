@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
   def timeline
     respond_to do |format|
         format.rss {
-          @entries = Entry.find(:all, :order => "created_at ASC", :conditions => {:exhibition_id => "0"})
+          @entries = Entry.find(:all, :order => "created_at ASC")
           @images = Image.find(:all)
           render 'timeline', :layout => "simple" 
         }
@@ -115,6 +115,7 @@ class ImagesController < ApplicationController
           @entry.owner_id = 0
         end
         
+        @entry.exhibition_id = 2
         @entry.save
         @image.entry_id = @entry.id
         
@@ -145,6 +146,7 @@ class ImagesController < ApplicationController
             @entry.owner_id = 0
           end
     
+          @entry.exhibition_id = 2
           @entry.save
           @image.entry_id = @entry.id
     
