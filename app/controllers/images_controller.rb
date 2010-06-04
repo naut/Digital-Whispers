@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
   def timeline
     respond_to do |format|
         format.rss {
-          @entries = Entry.find(:all, :order => "created_at ASC")
+          @entries = Entry.find(:all, :order => "created_at ASC", :conditions => {:exhibition_id => "2"})
           @images = Image.find(:all)
           render 'timeline', :layout => "simple" 
         }
@@ -106,24 +106,25 @@ class ImagesController < ApplicationController
   end
   
   def create
-    @entry = Entry.new
-    @image = @entry.images.new(params[:image])
-    
-    if logged_in?
-      @entry.owner_id = current_user.id
-    else
-      @entry.owner_id = 0
-    end
-    
-    @entry.save
-    @image.entry_id = @entry.id
-    
-    if @image.save
-      redirect_to "/timeline#id="+@image.id.to_s
-    else
-      render :action => 'new'
-    end
-  end
+        @entry = Entry.new
+        @image = @entry.images.new(params[:image])
+        
+        if logged_in?
+          @entry.owner_id = current_user.id
+        else
+          @entry.owner_id = 0
+        end
+        
+        @entry.exhibition_id = 2
+        @entry.save
+        @image.entry_id = @entry.id
+        
+        if @image.save
+          redirect_to "/timeline#id="+@image.id.to_s
+        else
+          render :action => 'new'
+        end
+      end
   
   def webcam
   end
@@ -136,30 +137,31 @@ class ImagesController < ApplicationController
   end
   
   def createfromflash
-     @entry = Entry.new
-     @image = Image.new(:image_file => params[:Filedata])   
-
-      if logged_in?
-        @entry.owner_id = current_user.id
-      else
-        @entry.owner_id = 0
+         @entry = Entry.new
+         @image = Image.new(:image_file => params[:Filedata])   
+    
+          if logged_in?
+            @entry.owner_id = current_user.id
+          else
+            @entry.owner_id = 0
+          end
+    
+          @entry.exhibition_id = 2
+          @entry.save
+          @image.entry_id = @entry.id
+    
+          if @image.save
+            flash[:notice] = "Successfully created image. Thank you for your contribution."
+            redirect_to "/timeline#id="+@image.id.to_s
+          else
+            render :action => 'new'
+          end
+          
+          
+       
+        logger.info{@image.errors.full_messages.join}
+    
       end
-
-      @entry.save
-      @image.entry_id = @entry.id
-
-      if @image.save
-        flash[:notice] = "Successfully created image. Thank you for your contribution."
-        redirect_to "/timeline#id="+@image.id.to_s
-      else
-        render :action => 'new'
-      end
-      
-      
-   
-    logger.info{@image.errors.full_messages.join}
-
-  end
   
   
   def edit

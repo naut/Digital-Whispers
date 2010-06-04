@@ -12,7 +12,7 @@
 
 <div class="content_bottom clearfix">
 	
-
+	<h1><%= @exhibition.title %></h1>
 
 	<div id="showdetails">
 		
@@ -154,7 +154,6 @@
 
 		var flashvars = {
 			baseURL: "/flash/timeline",
-			xmlURL: "", // URL zum XML
 			imageID: $.fragment().id, // ID zum Bild das aufgerufen werden soll
 			submissions: "<%= @user_submissions %>", // IDs von allen Bildern des eingeloggten Users
 			totalduration: 200
