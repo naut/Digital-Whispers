@@ -115,7 +115,7 @@ class ImagesController < ApplicationController
           @entry.owner_id = 0
         end
         
-        @entry.exhibition_id = 2
+        @entry.exhibition_id = 3
         @entry.save
         @image.entry_id = @entry.id
         
@@ -146,7 +146,7 @@ class ImagesController < ApplicationController
             @entry.owner_id = 0
           end
     
-          @entry.exhibition_id = 2
+          @entry.exhibition_id = 3
           @entry.save
           @image.entry_id = @entry.id
     
